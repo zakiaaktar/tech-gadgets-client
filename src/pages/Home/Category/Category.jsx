@@ -37,7 +37,7 @@ const Category = () => {
           <SwiperSlide className="relative ">
             <img className="mx-auto rounded-2xl" src={img5} alt="" />
             <h2
-              className={`cinzel text-3xl text-white  absolute bottom-8 right-28`}
+              className={`cinzel text-3xl text-white  absolute bottom-8 right-20`}
             >
               Featured Items
             </h2>
@@ -45,7 +45,7 @@ const Category = () => {
           <SwiperSlide className="relative ">
             <img className="mx-auto rounded-2xl" src={img5} alt="" />
             <h2
-              className={`cinzel text-3xl text-white absolute bottom-8 right-36`}
+              className={`cinzel text-3xl text-white absolute bottom-8 right-20`}
             >
               Top Rated
             </h2>
@@ -53,7 +53,7 @@ const Category = () => {
           <SwiperSlide className="relative">
             <img className="mx-auto rounded-2xl" src={img1} alt="" />
             <h2
-              className={`cinzel text-3xl text-white absolute bottom-8 right-36`}
+              className={`cinzel text-3xl text-white absolute bottom-8 right-20`}
             >
               New Arrival
             </h2>
@@ -61,7 +61,7 @@ const Category = () => {
           <SwiperSlide className="relative ">
             <img className="mx-auto rounded-2xl" src={img2} alt="" />
             <h2
-              className={`cinzel text-3xl text-white absolute bottom-8 right-40 lg:right-36`}
+              className={`cinzel text-3xl text-white absolute bottom-8 right-20`}
             >
               Comming Soon
             </h2>
@@ -69,7 +69,7 @@ const Category = () => {
           <SwiperSlide className="relative ">
             <img className="mx-auto rounded-2xl" src={img3} alt="" />
             <h2
-              className={`cinzel text-3xl text-white absolute bottom-8 right-40`}
+              className={`cinzel text-3xl text-white absolute bottom-8 right-20`}
             >
               Best Sellers
             </h2>
@@ -77,7 +77,7 @@ const Category = () => {
           <SwiperSlide className="relative ">
             <img className="mx-auto rounded-2xl" src={img4} alt="" />
             <h2
-              className={`cinzel text-3xl text-white absolute bottom-8 right-32`}
+              className={`cinzel text-3xl text-white absolute bottom-8 right-20`}
             >
               Most Viewed
             </h2>
