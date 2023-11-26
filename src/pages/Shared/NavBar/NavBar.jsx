@@ -1,8 +1,22 @@
 import { HiMenuAlt1 } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+
+
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+
+  const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.log(error));
+   }
+
+
   const navOptions = (
     <>
       <li>
@@ -35,16 +49,16 @@ const Navbar = () => {
           LOGIN
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           to="/register"
           className={({ isActive }) =>
             isActive ? `text-white` : `text-[#EE9322]`
           }
         >
-          REGISTER
+          Sign Up
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 
@@ -61,7 +75,7 @@ const Navbar = () => {
               md:w-52  text-sm bg-black border border-black bg-opacity-90"
           >
             {navOptions}
-            {/* <div className="mt-4">
+            <div className="mt-4">
               {user ? (
                 <>
                   <div className="flex items-center justify-between">
@@ -99,7 +113,7 @@ const Navbar = () => {
                   </div>
                 </>
               )}
-            </div> */}
+            </div>
           </ul>
         </div>
         <NavLink to="/">
@@ -122,7 +136,7 @@ const Navbar = () => {
             >
               <CgProfile></CgProfile>
             </label>
-            {/* <div
+            <div
               tabIndex={0}
               className="menu dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-black border border-black bg-opacity-80"
             >
@@ -166,7 +180,7 @@ const Navbar = () => {
                   </div>
                 </>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

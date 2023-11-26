@@ -1,11 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
+
 
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
+  const {signIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  const from = location.state?.from?.pathname || "/";
+    console.log('state in the location login page', location.state)
 
 
   useEffect(() => {
@@ -19,7 +30,24 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-  }
+
+    signIn(email, password)
+    .then(result => {
+        const user = result.user;
+        console.log(user);
+        
+        Swal.fire({
+            title: 'User Login Successful.',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        });
+        navigate(from, { replace: true });
+    })
+}
 
 
   const handleValidateCaptcha = (e) => {
@@ -38,6 +66,10 @@ const Login = () => {
   
 
   return (
+    <>
+        <Helmet>
+                <title>Tech Gadgets | Login</title>
+        </Helmet>
     <section className="container mx-auto lg:mt-12">
       <div className="lg:flex items-center justify-center lg:gap-32">
         <div className="bg-gradient-to-r from-[#FF9B50] to-[#F94C10] w-full py-20 lg:py-80 text-center text-white rounded-b-xl lg:rounded-3xl">
@@ -90,11 +122,13 @@ const Login = () => {
                 value="Login"
               />
             </div>
-            <div className="mt-4 text-center">
+           
+          </form>
+          <div className="mt-4 text-center">
               <p className="font-medium text-lg mb-4">
                 New in Tech Gadgets ? Please{" "}
-                <Link to="/register">
-                  <span className="text-[#F94C10]">Register</span>
+                <Link to="/signup">
+                  <span className="text-[#F94C10]">Sign Up</span>
                 </Link>
               </p>
               <p className="font-medium text-lg">Or Sign In With</p>
@@ -102,10 +136,10 @@ const Login = () => {
                 <FaGoogle className="text-2xl"></FaGoogle>
               </button>
             </div>
-          </form>
         </div>
-      </div>
+      </div> 
     </section>
+    </>
   );
 };
 
