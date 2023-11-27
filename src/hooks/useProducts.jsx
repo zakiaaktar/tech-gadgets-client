@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 
-const useProducts = () => {
+const useProducts = (search) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
 
     useEffect( () =>{
-        fetch('products.json')
+        fetch('http://localhost:1000/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data);

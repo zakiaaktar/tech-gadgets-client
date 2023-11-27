@@ -1,20 +1,23 @@
 import { HiMenuAlt1 } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-import { useContext } from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
+import useAuth from "../../../hooks/useAuth";
 
 
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();
 
 
   const handleLogOut = () => {
     logOut()
-        .then(() => { })
-        .catch(error => console.log(error));
-   }
+      .then(() => {
+        console.log("user logged out");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
 
   const navOptions = (
@@ -89,21 +92,23 @@ const Navbar = () => {
                         tabIndex={0}
                         className="btn btn-ghost btn-circle avatar"
                       >
-                        <div className="w-10 rounded-full">
+                        <div className="w-8 rounded-full">
                           <img src={user.photoURL} />
                         </div>
                       </label>
                     </div>
                     <div>
-                      <span className="block font-semibold text-sm text-center text-white uppercase">
+                      <span className="block font-semibold text-xs text-center text-white uppercase">
                         {user.displayName}
                       </span>
-                      <button
-                        onClick={handleLogOut}
-                        className="btn btn-xs btn-outline text-[#ffa903]"
-                      >
-                        Logout
-                      </button>
+                      <div className="text-center">
+                        <button
+                          onClick={handleLogOut}
+                          className="btn btn-xs btn-outline text-[#ffa903]"
+                        >
+                          Logout
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </>
@@ -124,8 +129,9 @@ const Navbar = () => {
         <NavLink to="/">
           <div className="text-white">
             <h2 className={`font-black text-xl text-[#EE9322] lg:text-2xl cinzel`}>
-              Tech Gadgets
+            Tech Gadgets
             </h2>
+            {/* <img className="w-40 lg:w-52" src={logo} alt="" /> */}
           </div>
         </NavLink>
         <div className="navbar-center hidden lg:flex">
@@ -137,7 +143,7 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
-              className="btn btn-ghost btn-circle avatar text-4xl text-white"
+              className="btn btn-ghost btn-circle btn-lg avatar text-5xl text-white"
             >
               <CgProfile></CgProfile>
             </label>
