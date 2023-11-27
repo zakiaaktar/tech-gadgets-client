@@ -63,6 +63,11 @@ const Navbar = () => {
   );
 
   return (
+
+
+
+
+
     <nav className="fixed z-10 bg-opacity-30 bg-black w-full px-8 lg:px-24 py-4 lg:py-6 rounded-bl-[45px] md:rounded-bl-[60px] rounded-br-[45px] md:rounded-br-[60px]">
       <div className="flex justify-between items-center">
         <div className="dropdown lg:hidden">

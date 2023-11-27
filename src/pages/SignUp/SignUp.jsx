@@ -147,7 +147,7 @@ const SignUp = () => {
               <p className="font-medium text-lg  mb-4">
                 Already have an account
                 <Link to="/login">
-                  <span className="text-[#F94C10]">Login</span>
+                  <span className="text-[#F94C10]"> Login</span>
                 </Link>
               </p>
             </div>

@@ -125,11 +125,12 @@ const Login = () => {
            
           </form>
           <div className="mt-4 text-center">
-              <p className="font-medium text-lg mb-4">
-                New in Tech Gadgets ? Please{" "}
+              <p className="font-medium text-lg my-2">
+              <small>New in Tech Gadgets ? Please{" "}
                 <Link to="/signup">
                   <span className="text-[#F94C10]">Sign Up</span>
                 </Link>
+                </small>
               </p>
               <p className="font-medium text-lg">Or Sign In With</p>
               <button className="btn btn-circle btn-outline mt-4 text-[#F94C10]">
