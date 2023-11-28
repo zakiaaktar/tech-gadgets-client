@@ -4,12 +4,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
     // password show and hide
@@ -23,8 +24,27 @@ const SignUp = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
 
+      updateUserProfile(data.name, data.photoURL)
+      .then(() => {
+         console.log('user profile info updated')
+         reset();
+         Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'User created successfully.',
+          showConfirmButton: false,
+          timer: 1500
+      });
+      navigate('/');
+          // create user entry in the database
+          // const userInfo = {
+          //     name: data.name,
+          //     email: data.email
+          // }
+        })
+        .catch(error => console.log(error))
      })
-    }
+    };
 
 
   return (
@@ -56,6 +76,22 @@ const SignUp = () => {
             {errors.name && (
               <span className="text-red-600">Name is required</span>
             )}
+             <div className="form-control">
+              <label className="label">
+                <span className="label-text font-semibold text-xl text-[#444]">
+                  Photo URL
+                </span>
+              </label>
+              <input
+                type="text"
+                {...register("photoURL", { required: true })}
+                placeholder="Enter Your Photo URL"
+                className="input rounded focus:border-[#F94C10]"
+              />
+            </div>
+            {errors.photoURL && (
+              <span className="text-red-600">photoURL is required</span>
+            )}
 
          <div className="form-control">
               <label className="label">
@@ -74,24 +110,8 @@ const SignUp = () => {
             {errors.email && (
               <span className="text-red-600">Email is required</span>
             )}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-semibold text-xl text-[#444]">
-                  Photo URL
-                </span>
-              </label>
-              <input
-                type="text"
-                {...register("photoURL", { required: true })}
-                placeholder="Enter Your Photo URL"
-                className="input rounded focus:border-[#F94C10]"
-              />
-            </div>
-            {errors.photoURL && (
-              <span className="text-red-600">Email is required</span>
-            )}
            
-            <div className="form-control">
+           <div className="form-control">
               <label className="label">
                 <span className="label-text font-semibold text-xl text-[#444]">
                   Password
@@ -144,7 +164,7 @@ const SignUp = () => {
            
           </form>
           <div className="mt-2 text-center">
-              <p className="font-medium text-lg  mb-4">
+              <p className="font-medium mb-4">
                 Already have an account
                 <Link to="/login">
                   <span className="text-[#F94C10]"> Login</span>

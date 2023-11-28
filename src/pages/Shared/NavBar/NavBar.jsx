@@ -52,16 +52,16 @@ const Navbar = () => {
           LOGIN
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink
-          to="/register"
+          to="/dashboard"
           className={({ isActive }) =>
             isActive ? `text-white` : `text-[#EE9322]`
           }
         >
-          Sign Up
+          Dashboard
         </NavLink>
-      </li> */}
+      </li>
     </>
   );
 
