@@ -1,27 +1,79 @@
-import banner from "../../../assets/home/banner.jpg";
-import { Parallax } from 'react-parallax';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import img1 from "../../../assets/BannerImage/1.jpg"
+import img2 from "../../../assets/BannerImage/2.jpg";
+import img3 from "../../../assets/BannerImage/3.png";
+import img4 from "../../../assets/BannerImage/4.jpg";
+import img5 from "../../../assets/BannerImage/10.png";
+import img6 from "../../../assets/BannerImage/9.png";
+import { Autoplay, Pagination } from "swiper/modules";
+
+
 
 const Banner = () => {
-    return (
-
-        <Parallax 
-        blur={{ min: -50, max: 50 }}
-        bgImage={banner}
-        bgImageAlt="Banner"
-        strength={-200}
-    >
-        <div className="hero h-[700px]">
-  <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-[#EE9322] text-5xl font-bold uppercase">Come Here And Enjoy!!!</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-outline border-0 border-b-4 btn-warning text-white text-xl">Shop Now</button>
-    </div>
-  </div>
-</div>
-    </Parallax>
-    );
+  return (
+    <section>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img1}
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img2}
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img3}
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img4}
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img5}
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            src={img6}
+            alt=""
+          />
+        </SwiperSlide>
+      </Swiper>
+    </section>
+  );
 };
 
 export default Banner;
