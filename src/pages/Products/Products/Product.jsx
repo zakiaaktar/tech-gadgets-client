@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 const Product = ({product}) => {
     //console.log(product);
     const { _id, name, image, description, vote, timestamp, tag } = product;
+    
 
 
     return (

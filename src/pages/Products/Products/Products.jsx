@@ -9,6 +9,8 @@ import { useState } from "react";
 const Products = () => {
     const [products] = useProducts([]);
     const [search, setSearch] = useState('');
+    
+    
 
 
     const handleSearch = e => {
