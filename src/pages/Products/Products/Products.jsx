@@ -1,50 +1,70 @@
 import { Helmet } from "react-helmet-async";
 import useProducts from "../../../hooks/useProducts";
 import Cover from "../../Shared/Cover/Cover";
-import Product from "./Product";
-import productImg from '../../../assets/home/productImg.jpg'
+
 import { useState } from "react";
 
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import { useParams } from "react-router-dom";
+import ProductTab from "../ProductTab/ProductTab";
+
+
 const Products = () => {
+    const categories = ['featured', 'trending', 'smartphones', 'computers', 'gaming'];
+    const { category } = useParams();
+    const initialIndex = categories.indexOf(category);
+    //console.log(category);
+    const [tabIndex, setTabIndex] = useState(initialIndex);
     const [products] = useProducts([]);
-    const [search, setSearch] = useState('');
+
+
+    const featured = products.filter(product => product.category === 'featured');
+    const trending = products.filter(product => product.category === 'trending');
+    const smartphones = products.filter(product => product.category === 'smartphones');
+    const computers = products.filter(product => product.category === 'computers');
+    const gaming = products.filter(product => product.category === 'gaming');
+    
+    
+    
     
     
 
-
-    const handleSearch = e => {
-        e.preventDefault();
-        const searchText = e.target.search.value;
-        //console.log(searchText);
-        setSearch(searchText);
-    }   
 
     return (
         <div className="">
             <Helmet>
                 <title>Tech Gadgets | Products</title>
             </Helmet>
-            <Cover img={productImg} title='All Exclusive Products'></Cover>
-
-            {/* search function */}
-            <div className="mt-12 w-3/4 text-center">
-            <form onSubmit={handleSearch}>
-                <input type="text" name="search" id="" className="input input-bordered"/>
-                <input type="submit" value="search" className="btn"/>
-            </form>
-            </div>
-           
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-[93%] mx-auto py-12">
-                {
-                    products.map(product => <Product
-                    key={product._id}
-                    product={product}
-                    ></Product>)
-                }
-            </div>
+        <div>
+                <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+                <TabList>
+                    <Tab>Featured</Tab>
+                    <Tab>Trending</Tab>
+                    <Tab>Smartphones</Tab>
+                    <Tab>Computers</Tab>
+                    <Tab>Gaming</Tab>
+                </TabList>
+                <TabPanel>
+                    <ProductTab product={featured}></ProductTab>
+                </TabPanel>
+                <TabPanel>
+                    <ProductTab product={trending}></ProductTab>
+                </TabPanel>
+                <TabPanel>
+                    <ProductTab product={smartphones}></ProductTab>
+                </TabPanel>
+                <TabPanel>
+                    <ProductTab product={computers}></ProductTab>
+                </TabPanel>
+                <TabPanel>
+                    <ProductTab product={gaming}></ProductTab>
+                </TabPanel>
+            </Tabs>
         </div>
+        </div>
+        
     );
 };
 
