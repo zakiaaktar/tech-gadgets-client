@@ -1,6 +1,7 @@
 import { Link} from "react-router-dom";
 
 
+
 const Product = ({product}) => {
     //console.log(product);
     const { _id, name, image, description, vote, timestamp, tag } = product;
@@ -8,25 +9,22 @@ const Product = ({product}) => {
 
 
     return (
-        <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-[#EE9322]">
-  <figure><img src={image} alt="product image" /></figure>
-  <div className="card-body">
-    <h2 className="card-title text-[#EE9322]">
-      {name}
-      <div className="badge badge-outline text-[#EE9322]">#{tag}</div>
-    </h2>
-    {/* <p>{description.slice(0, 80)}...</p> */}
-    <div className="card-actions justify-between mt-4">
-      <div className="badge badge-outline">{vote}</div> 
-      <div className="badge badge-outline">{timestamp}</div>
-      </div>
-  </div>
-  <div className="card-actions justify-center items-center">
-                    <Link to={`/products/${_id}`}>
-                        <button className="btn btn-outline bg-slate-100 border-0 border-b-4 border-orange-400 text-black cursor-pointer">More Info...</button>
-                    </Link>
-                </div>
-</div>
+      <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-blue-900 text-center container my-16">
+          <div>
+            <img className="rounded-lg rounded-br-[100px]" src={image} alt="" />
+          </div>
+          <div className="my-4 h-20">
+            <h2 className="font-bold text-lg text-black mb-2">{name}</h2>
+            <p className="font-semibold text-sm  bg-blue-900 text-white w-fit rounded px-2 mx-auto my-4">
+              {tag}
+            </p>
+          </div>
+           <Link to={`/products/${_id}`}>
+                  <button className="btn btn-outline bg-slate-100 border-0 border-b-4 w-2/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
+                      More Deatails...
+                  </button>
+                  </Link>
+        </div>
 
     );
 };

@@ -4,10 +4,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
+import useProducts from "../../../hooks/useProducts";
 
 
 
-const Featured = ({ items }) => {
+const Featured = ({ items, _id}) => {
+    const [products] = useProducts();
 
     return (
         <section className="my-16">
@@ -56,9 +59,12 @@ const Featured = ({ items }) => {
                       {item.tag}
                     </p>
                   </div>
+                  
+                  {/* <Link>
                   <button className="btn btn-outline bg-slate-100 border-0 border-b-4 w-2/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
                       View Deatails...
                   </button>
+                  </Link> */}
                 </div>
               </SwiperSlide>
             ))}

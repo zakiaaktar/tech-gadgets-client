@@ -1,58 +1,57 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
-import Cover from '../../Shared/Cover/Cover';
-import productImg from '../../../assets/home/productImg.jpg'
-import { CgLink, CgVolume } from 'react-icons/cg';
-import { FaLevelUpAlt, FaLink } from 'react-icons/fa';
 
 
 
 const ProductDetails = () => {
     const data = useLoaderData();
     console.log(data);
-    const { _id, name, image, description, vote, timestamp, tag, link} = data;
+    const { _id, name, image, description,  tag} = data;
 
 
 
     return (
-        <div className="">
-            <Helmet>
-                <title>Tech Gadgets | Products</title>
-            </Helmet>
-            <Cover img={productImg} title={name}></Cover>
+        <div>
+      {name && (
+        <Helmet>
+          <title>{`Tech Gadgets | ${name}`}</title>
+        </Helmet>
+      )}
 
+        <div className="rounded-t-lg h-fit">
+        <h2 className="font-semibold text-2xl md:text-3xl bg-[#13a0fe] text-center py-12 text-white rounded-lg rounded-br-[30px] md:rounded-br-[50px]">
+          {name}
+        </h2>
+        </div>
         
-        <div className="card card-side bg-base-100 shadow-xl rounded-none mb-14 mt-12">
+        <div className="card card-side bg-base-100 shadow-xl rounded-none">
             <figure className='w-1/2'>
 
                 <img src={image} alt='service-img' />
 
             </figure>
             <div className="card-body w-1/2">
-                <h2 className="card-title text-2xl text-[#EE9322] font-bold">{name}</h2>
+                <h2 className="card-title text-2xl font-bold">{name}</h2>
                 <p className='mt-12'>{description}</p>
-                <p className='text-xl text-[#EE9322] font-bold text-semibold'>#{tag}</p>
-                
-
-
+                {/* <p className='text-xl text-green-500 font-bold text-semibold'>Price: ${price}</p> */}
                 <div>
-                    <FaLink className='text-warning'></FaLink>
-                    <span>{link}</span>
+
+                    <Link to={`/addservice/${_id}`}>
+                    <button className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
+                      Add product
+                  </button>
+                    </Link>
                 </div>
-                <div>
-                    <FaLevelUpAlt className=''></FaLevelUpAlt>
-                    <span>{vote}</span>
-                </div>
-
-                <button className='btn btn-square text-red-600 px-12'>Reported</button>
-
-
             </div>
 
         </div>
-        </div>
-    );
+        
+      
+     
+    </div>
+
+);
 
    
 };
