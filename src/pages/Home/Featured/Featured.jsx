@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 import useProducts from "../../../hooks/useProducts";
+import Button from "../../../components/Button/Button";
 
 
 
@@ -59,18 +60,15 @@ const Featured = ({ items, _id}) => {
                       {item.tag}
                     </p>
                   </div>
-                  
-                  {/* <Link>
-                  <button className="btn btn-outline bg-slate-100 border-0 border-b-4 w-2/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
-                      View Deatails...
-                  </button>
-                  </Link> */}
-                </div>
+              </div>
               </SwiperSlide>
             ))}
           </div>
         </Swiper>
       </div>
+      <Link to="/products">
+        <Button buttonTitle={`Show all products`}></Button>
+      </Link>
     </section>
     );
 };
