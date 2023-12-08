@@ -3,12 +3,12 @@ import useProducts from "../../../hooks/useProducts";
 import Cover from "../../Shared/Cover/Cover";
 import Product from "./Product";
 import productImg from '../../../assets/home/productImg.jpg'
-import { useState } from "react";
+
 
 
 const Products = () => {
     const [products] = useProducts([]);
-    const [search, setSearch] = useState('');
+    
     
     
 
@@ -27,6 +27,7 @@ const Products = () => {
                     products.map(product => <Product
                     key={product._id}
                     product={product}
+                    //ReviewForm={product}
                     ></Product>)
                 }
             </div>

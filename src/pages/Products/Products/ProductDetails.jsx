@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
+import ReviewForm from '../ReviewForm/ReviewForm';
 
 
 
@@ -10,9 +11,14 @@ const ProductDetails = () => {
     const { _id, name, image, description,  tag} = data;
 
 
+    const handleAddToCart = food => {
+       console.log(food);
+    }
+
+
 
     return (
-        <div>
+        <>
       {name && (
         <Helmet>
           <title>{`Tech Gadgets | ${name}`}</title>
@@ -37,19 +43,22 @@ const ProductDetails = () => {
                 {/* <p className='text-xl text-green-500 font-bold text-semibold'>Price: ${price}</p> */}
                 <div>
 
-                    <Link to={`/addservice/${_id}`}>
-                    <button className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
-                      Add product
+                    <button 
+                    onClick={() => handleAddToCart(data)}
+                    className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
+                      Add to cart
                   </button>
-                    </Link>
+                    
                 </div>
             </div>
 
         </div>
         
-      
+      <ReviewForm></ReviewForm>
      
-    </div>
+    </>
+
+    
 
 );
 
