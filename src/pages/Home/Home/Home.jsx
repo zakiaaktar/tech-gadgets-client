@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Faq from "../Faq/Faq";
 import Featured from "../Featured/Featured";
+import Summary from "../Summary/Summary";
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Featured items={featured}></Featured>
+            <Summary></Summary>
             <Faq></Faq>
             {/* <Category></Category> */}
             <Footer></Footer>

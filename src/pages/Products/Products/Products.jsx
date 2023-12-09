@@ -19,7 +19,7 @@ const Products = () => {
             <Helmet>
                 <title>Tech Gadgets | Products</title>
             </Helmet>
-            <Cover img={productImg} title='All Exclusive Products'></Cover>
+            <Cover img={productImg} title='All Exclusive Products' description='You Can Choose Any Product'></Cover>
 
            
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-[93%] mx-auto py-12">
