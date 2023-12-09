@@ -11,8 +11,8 @@ const ProductDetails = () => {
     const { _id, name, image, description,  tag} = data;
 
 
-    const handleAddToCart = food => {
-       console.log(food);
+    const handleAddToCart = () => {
+       //console.log(food);
     }
 
 
@@ -42,9 +42,8 @@ const ProductDetails = () => {
                 <p className='mt-12'>{description}</p>
                 {/* <p className='text-xl text-green-500 font-bold text-semibold'>Price: ${price}</p> */}
                 <div>
-
-                    <button 
-                    onClick={() => handleAddToCart(data)}
+                  <button 
+                    onClick={handleAddToCart}
                     className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
                       Add to cart
                   </button>

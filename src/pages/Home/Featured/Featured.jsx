@@ -17,11 +17,7 @@ const Featured = ({ items, _id}) => {
         <section className="my-16">
             <SectionTitle
         title={`Featured Products`}
-        description={`Discover a future of innovation with our featured products—smart
-        glasses, quantum computing, advanced drones, mind-reading tech, space
-        habitats, solar-powered spacecraft, holographic displays, and
-        bio implants. Redefine possibilities with these technological marvels.`}
-      ></SectionTitle>
+        ></SectionTitle>
         <div>
         <Swiper
           slidesPerView={1}

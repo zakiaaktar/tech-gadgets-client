@@ -4,6 +4,7 @@ import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/NavBar/NavBar";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
+import Faq from "../Faq/Faq";
 import Featured from "../Featured/Featured";
 
 
@@ -23,6 +24,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Featured items={featured}></Featured>
+            <Faq></Faq>
             {/* <Category></Category> */}
             <Footer></Footer>
         </div>
