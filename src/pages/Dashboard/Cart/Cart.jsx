@@ -3,7 +3,7 @@
 const Cart = () => {
     return (
         <div>
-            <h2 className="text-4xl">Items: </h2>
+            <h2 className="text-4xl p-6">Items: </h2>
         </div>
     );
 };

@@ -55,7 +55,7 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          to="/"
+          to="/dashboard/cart"
           className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
         >
           <button className="btn">
