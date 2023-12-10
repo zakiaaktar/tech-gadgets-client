@@ -3,10 +3,11 @@ import useProducts from "../../../hooks/useProducts";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/NavBar/NavBar";
 import Banner from "../Banner/Banner";
-import Category from "../Category/Category";
+
 import Faq from "../Faq/Faq";
 import Featured from "../Featured/Featured";
-import Summary from "../Summary/Summary";
+//import Summary from "../Summary/Summary";
+import Trending from "../Trending/Trending";
 
 
 const Home = () => {
@@ -25,9 +26,10 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Featured items={featured}></Featured>
-            <Summary></Summary>
+            <Trending items={trending}></Trending>
+            {/* <Summary></Summary> */}
             <Faq></Faq>
-            {/* <Category></Category> */}
+           
             <Footer></Footer>
         </div>
     );

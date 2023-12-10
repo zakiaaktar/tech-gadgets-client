@@ -4,11 +4,13 @@ import { CgProfile } from "react-icons/cg";
 //import logo from "../../../assets/logo1.png";
 import useAuth from "../../../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [cart] = useCart();
   const navigate = useNavigate();
 
 
@@ -58,7 +60,7 @@ const Navbar = () => {
         >
           <button className="btn">
           <FaShoppingCart className="mr-2"></FaShoppingCart>
-          <div className="badge badge-secondary">+0</div>
+          <div className="badge badge-secondary">+{cart.length}</div>
           </button>
         </NavLink>
       </li>
@@ -85,7 +87,7 @@ const Navbar = () => {
   
   
   return (
-    <nav className="bg-[#F24C3D]  fixed z-10 w-full px-8 lg:px-24 py-4 rounded-bl-[45px] md:rounded-bl-[60px] rounded-br-[45px] md:rounded-br-[60px]">
+    <nav className="bg-[#F24C3D] z-10 w-full px-8 lg:px-24 py-4 rounded-bl-[45px] md:rounded-bl-[60px] rounded-br-[45px] md:rounded-br-[60px]">
     <div className="flex justify-between items-center">
       {/* small screen dropdown  */}
       <div className="dropdown lg:hidden z-10">
