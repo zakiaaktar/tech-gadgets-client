@@ -53,7 +53,7 @@ const Featured = ({ items, _id}) => {
                       {item.name}
                     </h2>
                     <p className="font-semibold text-sm  bg-blue-900 w-fit rounded px-2 mx-auto text-white">
-                      {item.tag}
+                      {item.category}
                     </p>
                   </div>
               </div>

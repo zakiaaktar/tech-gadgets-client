@@ -12,7 +12,7 @@ import useCart from '../../../hooks/useCart';
 const ProductDetails = () => {
     const data = useLoaderData();
     //console.log(data);
-    const { _id, name, image, description,  tag} = data;
+    const { _id, name, image, description, category, price} = data;
     const {user} = useAuth();
     const navigate = useNavigate();
     const location= useLocation();
@@ -30,7 +30,7 @@ const ProductDetails = () => {
             email: user.email,
             name,
             image,
-            // price
+            price
         }
         axiosSecure.post('/carts', cartItem)
                 .then(res => {
@@ -94,7 +94,7 @@ const ProductDetails = () => {
             <div className="card-body w-1/2">
                 <h2 className="card-title text-2xl font-bold">{name}</h2>
                 <p className='mt-12'>{description}</p>
-                {/* <p className='text-xl text-green-500 font-bold text-semibold'>Price: ${price}</p> */}
+                <p className='text-xl text-blue-500 font-bold text-semibold'>Price: ${price}</p>
                 <div>
                   <button 
                     onClick={handleAddToCart}

@@ -1,114 +1,142 @@
 [
-    {
-      "_id": 1,
-      "product_name": "QuantumEdge Pro Smartphone",
-      "reviewer_name": "Alice Johnson",
-      "reviewer_image": "https://ibb.co/vDKMT5Z",
+  {
+    "product_name": "Samsung Galaxy S21",
+    "reviewer_name": "Alice Johnson",
+    "reviewer_image": "https://ibb.co/vDKMT5Z",
+    "review": "The QuantumEdge Pro exceeds my expectations! It's lightning-fast, the camera quality is superb, and the sleek design is a head-turner. Highly recommend!",
+    "rating": 5
+  },
+  {
+    "product_name": "iPhone 15 Pro",
+    "reviewer_name": "Bob Anderson",
+    "reviewer_image": "https://ibb.co/fq5jd23",
+    "review": "As a hardcore gamer, the CyberPulse laptop is a beast! The graphics are stunning, and it handles high-performance games with ease. Impressed!",
+    "rating": 4.2
+  },
+  {
+    "product_name": "MacBook Air M2",
+    "reviewer_name": "Charlie Smith",
+    "reviewer_image": "https://ibb.co/MgLCBcY",
+    "review": "The ThunderBeast headset is a game-changer! Crystal-clear sound, comfortable fit, and the mic quality is excellent. A must-have for gamers!",
+    "rating": 5
+  },
+  {
+    "product_name": "Dell Ultrasharp 27 Monitor",
+    "reviewer_name": "David Miller",
+    "reviewer_image": "https://ibb.co/fq5jd23",
+    "review": "SwiftApp Pro is a lifesaver for project management. The features are intuitive, and it has significantly boosted our team's productivity. Great software!",
+    "rating": 3.8
+  },
+  {
+    "product_name": "Alienware Aurora R12",
+    "reviewer_name": "Emily White",
+    "reviewer_image": "https://ibb.co/MgLCBcY",
+    "review": "Installed the GreenPower Solar Panel at my home, and it's incredible! It generates ample energy, and the eco-friendly aspect is a big plus. Very satisfied!",
+    "rating": 4.7
+  },
+  {
+    "product_name": "Apple Watch Series 7",
+    "reviewer_name": "Frank Davis",
+    "reviewer_image": "https://ibb.co/vDKMT5Z",
+    "review": "InnoVision Smart Glasses are mind-blowing! The augmented reality features are impressive, and they add a futuristic element to daily activities. Love them!",
+    "rating": 4.9
+  },
+  {
+    "product_name": "Google Pixel 8",
+    "reviewer_name": "Grace Taylor",
+    "reviewer_image": "https://ibb.co/MgLCBcY",
+    "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+    "rating": 4.6
+  },
+  {
+      "product_name": "iPhone SE",
+      "reviewer_name": "Grace Taylor",
+      "reviewer_image": "https://ibb.co/MgLCBcY",
       "review": "The QuantumEdge Pro exceeds my expectations! It's lightning-fast, the camera quality is superb, and the sleek design is a head-turner. Highly recommend!",
       "rating": 5
     },
     {
-      "_id": 2,
-      "product_name": "CyberPulse Gaming Laptop",
-      "reviewer_name": "Bob Anderson",
+      "product_name": "MacBook Pro 14",
+      "reviewer_name": "Frank Davis",
       "reviewer_image": "https://ibb.co/fq5jd23",
       "review": "As a hardcore gamer, the CyberPulse laptop is a beast! The graphics are stunning, and it handles high-performance games with ease. Impressed!",
       "rating": 4.2
     },
     {
-      "_id": 3,
-      "product_name": "ThunderBeast Gaming Headset",
-      "reviewer_name": "Charlie Smith",
+      "product_name": "LG UltraGear 34GN850-B",
+      "reviewer_name": "Emily White",
       "reviewer_image": "https://ibb.co/MgLCBcY",
       "review": "The ThunderBeast headset is a game-changer! Crystal-clear sound, comfortable fit, and the mic quality is excellent. A must-have for gamers!",
       "rating": 5
     },
     {
-      "_id": 4,
-      "product_name": "SwiftApp Pro",
+      "product_name": "CyberPowerPC Gamer Xtreme VR Gaming PC",
       "reviewer_name": "David Miller",
       "reviewer_image": "https://ibb.co/fq5jd23",
       "review": "SwiftApp Pro is a lifesaver for project management. The features are intuitive, and it has significantly boosted our team's productivity. Great software!",
       "rating": 3.8
     },
     {
-      "_id": 5,
-      "product_name": "GreenPower Solar Panel",
-      "reviewer_name": "Emily White",
-      "reviewer_image": "https://ibb.co/MgLCBcY",
+      "product_name": "Apple Watch SE",
+      "reviewer_name": "Charlie Smith",
+      "reviewer_image": "https://ibb.co/vDKMT5Z",
       "review": "Installed the GreenPower Solar Panel at my home, and it's incredible! It generates ample energy, and the eco-friendly aspect is a big plus. Very satisfied!",
       "rating": 4.7
     },
     {
-      "_id": 6,
-      "product_name": "InnoVision Smart Glasses",
-      "reviewer_name": "Frank Davis",
+      "product_name": "OnePlus 9 Pro",
+      "reviewer_name": "Bob Anderson",
       "reviewer_image": "https://ibb.co/vDKMT5Z",
       "review": "InnoVision Smart Glasses are mind-blowing! The augmented reality features are impressive, and they add a futuristic element to daily activities. Love them!",
       "rating": 4.9
     },
     {
-      "_id": 7,
-      "product_name": "HyperZoom Camera Drone",
-      "reviewer_name": "Grace Taylor",
-      "reviewer_image": "https://ibb.co/MgLCBcY",
+      "product_name": "iPhone 12 Mini",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
       "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
       "rating": 4.6
     },
     {
-        "_id": 8,
-        "product_name": "QuantumEdge Pro Smartphone",
-        "reviewer_name": "Grace Taylor",
-        "reviewer_image": "https://ibb.co/MgLCBcY",
-        "review": "The QuantumEdge Pro exceeds my expectations! It's lightning-fast, the camera quality is superb, and the sleek design is a head-turner. Highly recommend!",
-        "rating": 5
-      },
-      {
-        "_id": 9,
-        "product_name": "CyberPulse Gaming Laptop",
-        "reviewer_name": "Frank Davis",
-        "reviewer_image": "https://ibb.co/fq5jd23",
-        "review": "As a hardcore gamer, the CyberPulse laptop is a beast! The graphics are stunning, and it handles high-performance games with ease. Impressed!",
-        "rating": 4.2
-      },
-      {
-        "_id": 10,
-        "product_name": "ThunderBeast Gaming Headset",
-        "reviewer_name": "Emily White",
-        "reviewer_image": "https://ibb.co/MgLCBcY",
-        "review": "The ThunderBeast headset is a game-changer! Crystal-clear sound, comfortable fit, and the mic quality is excellent. A must-have for gamers!",
-        "rating": 5
-      },
-      {
-        "_id": 11,
-        "product_name": "SwiftApp Pro",
-        "reviewer_name": "David Miller",
-        "reviewer_image": "https://ibb.co/fq5jd23",
-        "review": "SwiftApp Pro is a lifesaver for project management. The features are intuitive, and it has significantly boosted our team's productivity. Great software!",
-        "rating": 3.8
-      },
-      {
-        "_id": 12,
-        "product_name": "GreenPower Solar Panel",
-        "reviewer_name": "Charlie Smith",
-        "reviewer_image": "https://ibb.co/vDKMT5Z",
-        "review": "Installed the GreenPower Solar Panel at my home, and it's incredible! It generates ample energy, and the eco-friendly aspect is a big plus. Very satisfied!",
-        "rating": 4.7
-      },
-      {
-        "_id": 13,
-        "product_name": "InnoVision Smart Glasses",
-        "reviewer_name": "Bob Anderson",
-        "reviewer_image": "https://ibb.co/vDKMT5Z",
-        "review": "InnoVision Smart Glasses are mind-blowing! The augmented reality features are impressive, and they add a futuristic element to daily activities. Love them!",
-        "rating": 4.9
-      },
-      {
-        "_id": 14,
-        "product_name": "HyperZoom Camera Drone",
-        "reviewer_name": "Alice Johnson",
-        "reviewer_image": "https://ibb.co/fq5jd23",
-        "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
-        "rating": 4.6
-      }
-  ]
+      "product_name": "MacBook Air M1",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    },
+    {
+      "product_name": "ASUS ROG Swift PG279Q",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    },
+    {
+      "product_name": "HP Omen Obelisk Gaming PC",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    },
+    {
+      "product_name": "Samsung Galaxy Watch 4",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    },
+    {
+      "product_name": "HP Omen Obelisk Gaming PC",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    },
+    {
+      "product_name": "Xiaomi Mi 11",
+      "reviewer_name": "Alice Johnson",
+      "reviewer_image": "https://ibb.co/fq5jd23",
+      "review": "The HyperZoom Drone is a game-changer for aerial photography! The zoom capabilities are unmatched, and the 4K video quality is stunning. Highly recommended for photographers!",
+      "rating": 4.6
+    }
+]

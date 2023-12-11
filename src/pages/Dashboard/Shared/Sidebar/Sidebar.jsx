@@ -1,15 +1,21 @@
 import { NavLink } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaSearch, FaShoppingCart } from "react-icons/fa";
 import { RiFileList3Fill } from "react-icons/ri";
 import { ImBoxAdd } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
 import { BsFillFileEarmarkBarGraphFill } from "react-icons/bs";
 import { RiCoupon2Fill } from "react-icons/ri";
+import useCart from "../../../../hooks/useCart";
+
+
 
 
 const Sidebar = () => {
+  const [cart] = useCart();
+
+
     return (
-        <div className="md:w-52 lg:w-96 bg-[#13a0fe] flex justify-center h-[1000px] min-h-full">
+        <div className="md:w-52 lg:w-96 bg-[#13a0fe] flex justify-center min-h-screen">
         <ul className="mt-6 lg:mt-12">
           <div className="text-black mb-10 lg:mb-20">
             <NavLink to="/">
@@ -82,6 +88,30 @@ const Sidebar = () => {
               </li>
               <li className="mb-6">
                 <NavLink
+                  to="/dashboard/cart"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+                  }
+                >
+                  <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
+                </NavLink>
+              </li>
+              <li className="mb-6">
+                <NavLink
+                  to="/dashboard/userHome"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+                  }
+                >
+                  <FaHome className="lg:text-2xl"> </FaHome> User Home 
+                </NavLink>
+              </li>
+              <li className="mb-6">
+                <NavLink
                   to="/dashboard/addProduct"
                   className={({ isActive }) =>
                     isActive
@@ -121,6 +151,18 @@ const Sidebar = () => {
               }
             >
               <FaHome className="lg:text-2xl"></FaHome>Home
+            </NavLink>
+          </li>
+          <li className="mb-6">
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive
+                  ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+                  : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+              }
+            >
+              <FaSearch className="lg:text-2xl"></FaSearch>Products
             </NavLink>
           </li>
         </ul>

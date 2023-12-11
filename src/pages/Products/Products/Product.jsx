@@ -4,7 +4,7 @@ import { Link} from "react-router-dom";
 
 const Product = ({product}) => {
     //console.log(product);
-    const { _id, name, image, description, vote, timestamp, tag } = product;
+    const { _id, name, image, description, category } = product;
     
 
 
@@ -16,7 +16,7 @@ const Product = ({product}) => {
           <div className="my-4 h-20">
             <h2 className="font-bold text-lg text-black mb-2">{name}</h2>
             <p className="font-semibold text-sm  bg-blue-900 text-white w-fit rounded px-2 mx-auto my-4">
-              {tag}
+              {category}
             </p>
           </div>
            <Link to={`/products/${_id}`}>
