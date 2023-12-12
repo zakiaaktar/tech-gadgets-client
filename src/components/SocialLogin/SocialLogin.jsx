@@ -24,9 +24,7 @@ const SocialLogin = () => {
         .then((res) => {
             console.log(res.data);
           if (res.data.insertedId) {
-            // console.log('user added to the database')
-            // reset();
-            Swal.fire({
+              Swal.fire({
               position: "center",
               icon: "success",
               title: "Successful.",
