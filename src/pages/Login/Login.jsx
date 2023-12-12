@@ -5,6 +5,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 
 
@@ -132,10 +133,7 @@ const Login = () => {
                 </Link>
                 </small>
               </p>
-              <p className="font-medium text-lg">Or Sign In With</p>
-              <button className="btn btn-circle btn-outline mt-4 text-[#F94C10]">
-                <FaGoogle className="text-2xl"></FaGoogle>
-              </button>
+              <SocialLogin></SocialLogin>
             </div>
         </div>
       </div> 

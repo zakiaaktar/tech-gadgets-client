@@ -5,10 +5,13 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 
 
 const SignUp = () => {
+    const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -18,7 +21,7 @@ const SignUp = () => {
 
 
   const onSubmit = (data) => {
-    console.log(data);
+    //console.log(data);
     createUser(data.email, data.password)
     .then((result) => {
       const loggedUser = result.user;
@@ -26,25 +29,32 @@ const SignUp = () => {
 
       updateUserProfile(data.name, data.photoURL)
       .then(() => {
-         console.log('user profile info updated')
-         reset();
-         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'User created successfully.',
-          showConfirmButton: false,
-          timer: 1500
-      });
-      navigate('/');
-          // create user entry in the database
-          // const userInfo = {
-          //     name: data.name,
-          //     email: data.email
-          // }
+         //console.log('user profile info updated')
+         // create user entry in the database
+         const userInfo = {
+          name: data.name,
+          email: data.email
+      }
+        axiosPublic.post('/users', userInfo)
+          .then(res => {
+              if (res.data.insertedId) {
+                  console.log('user added to the database')
+                  reset();
+                  Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'User created successfully.',
+                      showConfirmButton: false,
+                      timer: 1500
+                  });
+                  navigate('/');
+              }
+          })
         })
         .catch(error => console.log(error))
      })
     };
+
 
 
   return (
@@ -163,15 +173,18 @@ const SignUp = () => {
             </div>
            
           </form>
-          <div className="mt-2 text-center">
+          <div className="my-8 text-center">
               <p className="font-medium mb-4">
                 Already have an account
                 <Link to="/login">
-                  <span className="text-[#F94C10]"> Login</span>
+                  <span className="text-[#F94C10]"> Please Login</span>
                 </Link>
               </p>
+              <SocialLogin></SocialLogin>
             </div>
         </div>
+
+        {/* right side background */}
         <div className="bg-gradient-to-r from-[#FF9B50] to-[#F94C10] w-full py-20 lg:py-80 text-center text-white rounded-b-xl lg:rounded-3xl">
           <Link to="/">
             <h2 className="font-bold text-5xl mb-4">Tech Gadgets</h2>
