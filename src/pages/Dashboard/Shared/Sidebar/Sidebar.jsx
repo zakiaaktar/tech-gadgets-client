@@ -141,14 +141,14 @@ const Sidebar = () => {
               </li>
               <li className="mb-6">
                 <NavLink
-                  to="/dashboard/addProduct"
+                  to="/dashboard/addProducts"
                   className={({ isActive }) =>
                     isActive
                       ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
                       : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
                   }
                 >
-                  <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Product
+                  <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Products
                 </NavLink>
               </li>
               <li className="mb-10">

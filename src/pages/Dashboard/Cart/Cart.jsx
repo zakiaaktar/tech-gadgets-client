@@ -8,6 +8,7 @@ const Cart = () => {
     const [cart, refetch] = useCart();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
     //console.log(totalPrice);
+    const fixTotalPrice = totalPrice.toFixed(2);
     const axiosSecure = useAxiosSecure();
 
 
@@ -47,7 +48,7 @@ const Cart = () => {
         <div>
             <div className="flex justify-evenly my-8">
                 <h2 className="text-4xl">Items: {cart.length}</h2>
-                <h2 className="text-4xl">Total Price: {totalPrice}</h2>
+                <h2 className="text-4xl">Total Price: {fixTotalPrice}</h2>
             </div>
             {/* table */}
             <div className="overflow-x-auto">

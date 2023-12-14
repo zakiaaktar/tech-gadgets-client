@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import AddProducts from "../pages/Dashboard/AddProducts/AddProducts";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import Cart from "../pages/Dashboard/Cart/Cart";
 import Home from "../pages/Home/Home/Home";
@@ -51,12 +52,17 @@ export const router = createBrowserRouter([
         path: 'dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
+             // normal user routes
             {
                 path: 'cart',
                 element: <Cart></Cart>
               },
 
              // admin only routes
+            //  {
+            //     path: 'addProducts',
+            //     element: <AddProducts></AddProducts>
+            //   },
               {
                 path: 'users',
                 element: <AllUsers></AllUsers>
