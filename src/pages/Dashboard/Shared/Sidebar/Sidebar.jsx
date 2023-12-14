@@ -6,15 +6,14 @@ import { CgProfile } from "react-icons/cg";
 import { BsFillFileEarmarkBarGraphFill } from "react-icons/bs";
 import { RiCoupon2Fill } from "react-icons/ri";
 import useCart from "../../../../hooks/useCart";
+import useAdmin from "../../../../hooks/useAdmin";
 
 
 
 
 const Sidebar = () => {
   const [cart] = useCart();
-
-  //TODO; get isAdmin value from the database
-  //const [isAdmin] = true;
+  const [isAdmin] = useAdmin();
 
 
     return (
@@ -33,138 +32,141 @@ const Sidebar = () => {
             </p>
           </div>
           
-              {/* admin role */}
-           
-              <div>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/adminHome"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <FaHome className="lg:text-3xl"></FaHome>{" "}
-                  Admin Home
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/manageItems"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <FaList className="lg:text-3xl"></FaList>{" "}
-                  Manage Bookings
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/users"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <FaUsers className="lg:text-3xl"></FaUsers>{" "}
-                  All Users
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/allUsers"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <CgProfile className="lg:text-3xl"></CgProfile> Manage Users
-                </NavLink>
-              </li>
-              <li className="mb-10">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <RiCoupon2Fill className="lg:text-3xl"></RiCoupon2Fill> Manage
-                  Coupons
-                </NavLink>
-              </li>
-            </div>
-            
-              <div>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/profile"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <CgProfile className="lg:text-3xl"></CgProfile>MY Profile
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/cart"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/userHome"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <FaHome className="lg:text-2xl"> </FaHome> User Home 
-                </NavLink>
-              </li>
-              <li className="mb-6">
-                <NavLink
-                  to="/dashboard/addProducts"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Products
-                </NavLink>
-              </li>
-              <li className="mb-10">
-                <NavLink
-                  to="/dashboard/myProduct"
-                  className={({ isActive }) =>
-                    isActive
-                      ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                      : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-                  }
-                >
-                  <RiFileList3Fill className="lg:text-3xl"></RiFileList3Fill> My
-                  Product
-                </NavLink>
-              </li>
-            </div>
+             {/* admin role */}
+{isAdmin ? (
+  <div>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/adminHome"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaHome className="lg:text-3xl"></FaHome>{" "}
+      Admin Home
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/manageItems"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaList className="lg:text-3xl"></FaList>{" "}
+      Manage Bookings
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/users"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaUsers className="lg:text-3xl"></FaUsers>{" "}
+      All Users
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/cart"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/allUsers"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <CgProfile className="lg:text-3xl"></CgProfile> Manage Users
+    </NavLink>
+  </li>
+  <li className="mb-10">
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <RiCoupon2Fill className="lg:text-3xl"></RiCoupon2Fill> Manage
+      Coupons
+    </NavLink>
+  </li>
+</div>
+) : (
+  <div>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/profile"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <CgProfile className="lg:text-3xl"></CgProfile>MY Profile
+    </NavLink>
+  </li>
+  
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/userHome"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaHome className="lg:text-2xl"> </FaHome> User Home 
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/addProduct"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Product
+    </NavLink>
+  </li>
+  <li className="mb-10">
+    <NavLink
+      to="/dashboard/myProduct"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <RiFileList3Fill className="lg:text-3xl"></RiFileList3Fill> My
+      Product
+    </NavLink>
+  </li>
+</div>
+)}
+
            
             
           
@@ -221,136 +223,3 @@ export default Sidebar;
 
 
 
-// {/* admin role */}
-// {isAdmin ? (
-//   <div>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/adminHome"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <FaHome className="lg:text-3xl"></FaHome>{" "}
-//       Admin Home
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/manageItems"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <FaList className="lg:text-3xl"></FaList>{" "}
-//       Manage Bookings
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/users"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <FaUsers className="lg:text-3xl"></FaUsers>{" "}
-//       All Users
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/allUsers"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <CgProfile className="lg:text-3xl"></CgProfile> Manage Users
-//     </NavLink>
-//   </li>
-//   <li className="mb-10">
-//     <NavLink
-//       to="/"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <RiCoupon2Fill className="lg:text-3xl"></RiCoupon2Fill> Manage
-//       Coupons
-//     </NavLink>
-//   </li>
-// </div>
-// ) : (
-//   <div>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/profile"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <CgProfile className="lg:text-3xl"></CgProfile>MY Profile
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/cart"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/userHome"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <FaHome className="lg:text-2xl"> </FaHome> User Home 
-//     </NavLink>
-//   </li>
-//   <li className="mb-6">
-//     <NavLink
-//       to="/dashboard/addProduct"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Product
-//     </NavLink>
-//   </li>
-//   <li className="mb-10">
-//     <NavLink
-//       to="/dashboard/myProduct"
-//       className={({ isActive }) =>
-//         isActive
-//           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-//       }
-//     >
-//       <RiFileList3Fill className="lg:text-3xl"></RiFileList3Fill> My
-//       Product
-//     </NavLink>
-//   </li>
-// </div>
-// )}
