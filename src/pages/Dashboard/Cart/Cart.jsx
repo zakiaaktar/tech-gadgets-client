@@ -51,7 +51,7 @@ const Cart = () => {
                 <h2 className="text-4xl">Total Price: {fixTotalPrice}</h2>
             </div>
             {/* table */}
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mx-2">
   <table className="table w-full">
     {/* head */}
     <thead>

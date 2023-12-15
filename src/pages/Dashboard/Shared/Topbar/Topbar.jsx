@@ -8,6 +8,7 @@ import { BsFillFileEarmarkBarGraphFill } from "react-icons/bs";
 import { RiCoupon2Fill } from "react-icons/ri";
 import useCart from "../../../../hooks/useCart";
 import useAdmin from "../../../../hooks/useAdmin";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 
 
@@ -56,6 +57,18 @@ const Topbar = () => {
       }
     >
       <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/addProducts"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <MdOutlineProductionQuantityLimits  className="lg:text-2xl"> </MdOutlineProductionQuantityLimits> Add Products
     </NavLink>
   </li>
   <li className="mb-6">

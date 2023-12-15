@@ -70,7 +70,7 @@ const AllUsers = () => {
             </div>
 
             {/* table */}
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-full mx-2">
   <table className="table table-zebra">
     {/* head */}
     <thead>

@@ -10,6 +10,7 @@ import ProductDetails from "../pages/Products/Products/ProductDetails";
 import Products from "../pages/Products/Products/Products";
 import Secret from "../pages/Shared/Secret/Secret";
 import SignUp from "../pages/SignUp/SignUp";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -59,13 +60,13 @@ export const router = createBrowserRouter([
               },
 
              // admin only routes
-            //  {
-            //     path: 'addProducts',
-            //     element: <AddProducts></AddProducts>
-            //   },
+             {
+                path: 'addProducts',
+                element: <AdminRoute><AddProducts></AddProducts></AdminRoute>
+              },
               {
                 path: 'users',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
               }
         ]
 

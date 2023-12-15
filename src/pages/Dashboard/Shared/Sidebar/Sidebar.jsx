@@ -3,11 +3,10 @@ import { FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers } from "r
 import { RiFileList3Fill } from "react-icons/ri";
 import { ImBoxAdd } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
-import { BsFillFileEarmarkBarGraphFill } from "react-icons/bs";
 import { RiCoupon2Fill } from "react-icons/ri";
 import useCart from "../../../../hooks/useCart";
 import useAdmin from "../../../../hooks/useAdmin";
-
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 
 
@@ -33,7 +32,7 @@ const Sidebar = () => {
           </div>
           
              {/* admin role */}
-{isAdmin ? (
+      {isAdmin ? (
   <div>
   <li className="mb-6">
     <NavLink
@@ -46,19 +45,6 @@ const Sidebar = () => {
     >
       <FaHome className="lg:text-3xl"></FaHome>{" "}
       Admin Home
-    </NavLink>
-  </li>
-  <li className="mb-6">
-    <NavLink
-      to="/dashboard/manageItems"
-      className={({ isActive }) =>
-        isActive
-          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-      }
-    >
-      <FaList className="lg:text-3xl"></FaList>{" "}
-      Manage Bookings
     </NavLink>
   </li>
   <li className="mb-6">
@@ -86,6 +72,32 @@ const Sidebar = () => {
       <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
     </NavLink>
   </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/addProducts"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <MdOutlineProductionQuantityLimits  className="lg:text-2xl"> </MdOutlineProductionQuantityLimits> Add Products
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/manageItems"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaList className="lg:text-3xl"></FaList>{" "}
+      Manage Bookings
+    </NavLink>
+  </li>
+  
   <li className="mb-6">
     <NavLink
       to="/dashboard/allUsers"
