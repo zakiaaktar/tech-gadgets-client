@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet-async";
-import useProducts from "../../../hooks/useProducts";
+//import useProducts from "../../../hooks/useProducts";
 import Cover from "../../Shared/Cover/Cover";
 import Product from "./Product";
 import productImg from '../../../assets/home/productImg.jpg'
+import useProducts from "../../../hooks/useProducts";
 
 
 
 const Products = () => {
-    const [products] = useProducts([]);
+    //const [products] = useProducts([]);
+    const [products] = useProducts();
     
     
     

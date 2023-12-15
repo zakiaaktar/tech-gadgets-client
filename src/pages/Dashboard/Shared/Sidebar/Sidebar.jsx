@@ -84,6 +84,20 @@ const Sidebar = () => {
       <MdOutlineProductionQuantityLimits  className="lg:text-2xl"> </MdOutlineProductionQuantityLimits> Add Products
     </NavLink>
   </li>
+
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/manageItems"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <RiCoupon2Fill className="lg:text-3xl"></RiCoupon2Fill> Manage
+      Items
+    </NavLink>
+  </li>
   <li className="mb-6">
     <NavLink
       to="/dashboard/manageItems"
