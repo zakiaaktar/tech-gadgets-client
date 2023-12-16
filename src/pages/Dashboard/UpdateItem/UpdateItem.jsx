@@ -1,9 +1,9 @@
-import { useForm } from 'react-hook-form';
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import Swal from 'sweetalert2';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import useAxiosPublic from '../../../hooks/useAxiosPublic';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 
@@ -11,7 +11,12 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 
-const AddProducts = () => {
+const UpdateItem = () => {
+    // const item = useLoaderData();
+    // console.log(item);
+    const { _id, name, image, description, category, price} = useLoaderData();
+
+
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
@@ -38,15 +43,15 @@ const AddProducts = () => {
                image: res.data.data.display_url
            }
             // 
-            const productRes = await axiosSecure.post('/product', productItem);
+            const productRes = await axiosSecure.patch(`/product/${_id}`, productItem);
             console.log(productRes.data)
-            if(productRes.data.insertedId){
+            if(productRes.data.modifiedCount > 0){
                 // show success popup
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is added to the product.`,
+                    title: `${data.name} is updated to the Product.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -55,12 +60,12 @@ const AddProducts = () => {
         console.log('with image url', res.data);
     }
 
-    
+
 
     return (
-        <div className='mt-11'>
-            <SectionTitle title="Add an Product" description="What's new?"></SectionTitle>
-            
+        <div>
+            <SectionTitle title="Update an Item" description="Refresh info"></SectionTitle>
+
             <div>
             <form onSubmit={handleSubmit(onSubmit)} className='mx-10'>
                 <div className="form-control w-full">
@@ -69,6 +74,7 @@ const AddProducts = () => {
                         </label>
                         <input
                             type="text"
+                            defaultValue={name}
                             placeholder="Product Name"
                             {...register('name', { required: true })}
                             required
@@ -80,7 +86,7 @@ const AddProducts = () => {
                             <label className="label">
                                 <span className="label-text">Category*</span>
                             </label>
-                            <select defaultValue="default" {...register('category', { required: true })}
+                            <select defaultValue={category} {...register('category', { required: true })}
                                 className="select select-bordered w-full">
                                 <option disabled value="default">Select a category</option>
                                 <option value="Smartphones">Smartphones</option>
@@ -99,6 +105,7 @@ const AddProducts = () => {
                             </label>
                             <input
                                 type="number"
+                                defaultValue={price}
                                 placeholder="Price"
                                 {...register('price', { required: true })}
                                 className="input input-bordered w-full" />
@@ -109,7 +116,7 @@ const AddProducts = () => {
                         <label className="label">
                             <span className="label-text">Product Details</span>
                         </label>
-                        <textarea {...register('description')} className="textarea textarea-bordered h-24" placeholder="Product Details"></textarea>
+                        <textarea defaultValue={description}{...register('product')} className="textarea textarea-bordered h-24" placeholder="Product Details"></textarea>
                     </div>
 
                     <div className="form-control w-full my-6">
@@ -117,9 +124,7 @@ const AddProducts = () => {
                     </div>
 
                     <button className="btn">
-                        Add Product <MdOutlineProductionQuantityLimits className="ml-4 text-3xl"></MdOutlineProductionQuantityLimits>
-
-                       
+                        Update Product Item
                     </button>
             </form>
             </div>
@@ -127,4 +132,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default UpdateItem;
