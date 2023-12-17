@@ -39,7 +39,7 @@ const Trending = ({items}) => {
         {items.map((item) => (
           <SwiperSlide key={item._id}>
             <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-blue-900">
-              <img
+              <img data-aos="zoom-out" data-aos-duration="1500"
                 className="rounded-lg rounded-br-[100px]"
                 src={item.image}
                 alt=""

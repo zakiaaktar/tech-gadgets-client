@@ -11,7 +11,7 @@ const Product = ({product}) => {
     return (
       <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-blue-900 text-center container my-16">
           <div>
-            <img className="rounded-lg rounded-br-[100px]" src={image} alt="" />
+            <img data-aos="zoom-out" data-aos-duration="1500" className="rounded-lg rounded-br-[100px]" src={image} alt="" />
           </div>
           <div className="my-4 h-20">
             <h2 className="font-bold text-lg text-black mb-2">{name}</h2>

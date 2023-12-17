@@ -1,10 +1,18 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../pages/Shared/Footer/Footer";
 import NavBar from "../pages/Shared/NavBar/NavBar";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 
 const Main = () => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
     const location = useLocation();
     //console.log(location);
 
