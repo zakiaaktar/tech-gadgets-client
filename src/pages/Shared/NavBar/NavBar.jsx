@@ -5,11 +5,13 @@ import { CgProfile } from "react-icons/cg";
 import useAuth from "../../../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [isAdmin] = useAdmin();
   const [cart] = useCart();
   const navigate = useNavigate();
 
@@ -80,6 +82,40 @@ const Navbar = () => {
           </li>
         )}
       </div>
+
+
+
+      <div>
+        {user && isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/adminHome"
+              className={({ isActive }) =>
+                isActive ? `text-black` : `text-white`
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+      </div>
+      <div>
+        {user && !isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/userHome"
+              className={({ isActive }) =>
+                isActive ? `text-black` : `text-white`
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+      </div>
+
+
+
     </>
   );
   

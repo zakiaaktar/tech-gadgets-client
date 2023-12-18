@@ -2,12 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import AddProducts from "../pages/Dashboard/AddProducts/AddProducts";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import Cart from "../pages/Dashboard/Cart/Cart";
 import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import ProductDetails from "../pages/Products/Products/ProductDetails";
@@ -59,6 +61,10 @@ export const router = createBrowserRouter([
         children: [
              // normal user routes
             {
+              path: 'userHome',
+              element: <UserHome></UserHome>
+            },
+            {
                 path: 'cart',
                 element: <Cart></Cart>
               },
@@ -72,6 +78,10 @@ export const router = createBrowserRouter([
               },
 
              // admin only routes
+             {
+              path: 'adminHome',
+              element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+             },
              {
                 path: 'addProducts',
                 element: <AdminRoute><AddProducts></AddProducts></AdminRoute>

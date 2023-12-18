@@ -7,12 +7,14 @@ import { RiCoupon2Fill } from "react-icons/ri";
 import useCart from "../../../../hooks/useCart";
 import useAdmin from "../../../../hooks/useAdmin";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import useAuth from "../../../../hooks/useAuth";
 
 
 
 const Sidebar = () => {
   const [cart] = useCart();
   const [isAdmin] = useAdmin();
+  const {user} = useAuth();
 
 
     return (
@@ -32,6 +34,7 @@ const Sidebar = () => {
           </div>
           
              {/* admin role */}
+             
       {isAdmin ? (
   <div>
   <li className="mb-6">
