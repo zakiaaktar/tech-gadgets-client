@@ -60,18 +60,7 @@ const Sidebar = () => {
       All Users
     </NavLink>
   </li>
-  <li className="mb-6">
-    <NavLink
-      to="/dashboard/cart"
-      className={({ isActive }) =>
-        isActive
-          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
-      }
-    >
-      <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
-    </NavLink>
-  </li>
+ 
   <li className="mb-6">
     <NavLink
       to="/dashboard/addProducts"
@@ -167,14 +156,26 @@ const Sidebar = () => {
   </li>
   <li className="mb-6">
     <NavLink
-      to="/dashboard/addProduct"
+      to="/dashboard/cart"
       className={({ isActive }) =>
         isActive
           ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
           : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
       }
     >
-      <ImBoxAdd className="lg:text-2xl"> </ImBoxAdd> Add Product
+      <FaShoppingCart className="lg:text-2xl"> </FaShoppingCart> My Cart ({cart.length})
+    </NavLink>
+  </li>
+  <li className="mb-6">
+    <NavLink
+      to="/dashboard/paymentHistory"
+      className={({ isActive }) =>
+        isActive
+          ? `text-white flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+          : `text-black flex items-center gap-3 font-bold cinzel text-xs lg:text-xl uppercase`
+      }
+    >
+      <FaList className="lg:text-2xl"> </FaList> Payment History
     </NavLink>
   </li>
   <li className="mb-10">
@@ -192,11 +193,6 @@ const Sidebar = () => {
   </li>
 </div>
 )}
-
-           
-            
-          
-                  
           
           
           {/* devider */}

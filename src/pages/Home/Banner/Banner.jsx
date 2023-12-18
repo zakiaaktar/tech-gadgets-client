@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import img1 from "../../../assets/BannerImage/1.jpg"
 import img2 from "../../../assets/BannerImage/2.jpg";
-import img3 from "../../../assets/BannerImage/3.png";
+import img3 from "../../../assets/BannerImage/3.jpg";
 import img4 from "../../../assets/BannerImage/4.jpg";
 import img5 from "../../../assets/BannerImage/10.png";
 import img6 from "../../../assets/BannerImage/9.png";
