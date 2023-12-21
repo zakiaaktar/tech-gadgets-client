@@ -45,12 +45,12 @@ export const router = createBrowserRouter([
             {
                 path: 'products',
                 element: <Products></Products>,
-                loader: () => fetch('http://localhost:1000/productsCount')
+                loader: () => fetch('https://tech-gadgets-server.vercel.app/productsCount')
             },
             {
                 path: 'products/:id',
                 element: <ProductDetails></ProductDetails>,
-                loader: ({ params }) => fetch(`http://localhost:1000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://tech-gadgets-server.vercel.app/products/${params.id}`)
                 
             }
         ]
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
               {
                 path: 'updateItem/:id',
                 element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:1000/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-gadgets-server.vercel.app/products/${params.id}`)
               },
               {
                 path: 'users',

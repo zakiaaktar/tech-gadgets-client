@@ -27,7 +27,7 @@ export default useProducts;
     
 
 //     useEffect( () =>{
-//         fetch('http://localhost:1000/products')
+//         fetch('https://tech-gadgets-server.vercel.app/products')
 //         .then(res => res.json())
 //         .then(data => {
 //             setProducts(data);

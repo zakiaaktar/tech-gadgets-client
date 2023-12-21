@@ -1,64 +1,64 @@
 [
+   {
+    "name": "MacBook Air M2",
+    "description": "Ultra-slim and lightweight laptop with Apple's M2 chip for fast performance.",
+    "image": "https://i.ibb.co/ZTL9FLn/Untitled-design-2.jpg",
+    "category": "featured",
+    "price": 1299.99
+   },
+   {
+    "name": "iPhone 15 Pro",
+    "description": "The latest iPhone with advanced camera capabilities and enhanced performance.",
+    "image": "https://i.ibb.co/s6VBwWz/Untitled-design-1.jpg",
+    "category": "featured",
+    "price": 1099.99
+    },
     {
       "name": "Samsung Galaxy S21",
       "description": "Powerful Android smartphone with a stunning display and high-end features.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/TbsF0xh/Untitled-design.jpg",
       "category": "featured",
       "price": 799.99
     },
     {
-      "name": "iPhone 15 Pro",
-      "description": "The latest iPhone with advanced camera capabilities and enhanced performance.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
-      "category": "featured",
-      "price": 1099.99
-    },
-    {
-      "name": "MacBook Air M2",
-      "description": "Ultra-slim and lightweight laptop with Apple's M2 chip for fast performance.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
-      "category": "featured",
-      "price": 1299.99
-    },
-    {
       "name": "Dell Ultrasharp 27 Monitor",
       "description": "High-resolution 27-inch monitor with vibrant colors and wide viewing angles.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/DbqV5st/Untitled-design-3.jpg",
       "category": "Monitors",
       "price": 399.99
     },
     {
       "name": "Alienware Aurora R12",
       "description": "Gaming PC with powerful specs, designed for immersive gaming experiences.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/0YvvQjS/Untitled-design-4.jpg",
       "category": "Gaming PCs",
       "price": 1899.99
     },
     {
       "name": "Apple Watch Series 7",
       "description": "The latest Apple Watch with a larger, always-on Retina display and new health features.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/HpbTDfG/Untitled-design-5.jpg",
       "category": "trending",
       "price": 399.99
     },
     {
       "name": "Google Pixel 8",
       "description": "Android smartphone with a cutting-edge camera system and Google's latest features.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
-      "category": "trending",
+      "image": "https://i.ibb.co/cQ4pspR/Untitled-design-6.jpg",
+      "category": "iPhones",
       "price": 699.99
     },
     {
-      "name": "iPhone SE",
+      "name": "iPhone 14 pro max",
       "description": "Compact iPhone with a powerful A15 Bionic chip, perfect for those who prefer a smaller size.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
-      "category": "iPhones",
+      "image": "https://i.ibb.co/PTcbS4g/Untitled-design-7.jpg",
+       "category": "trending",
       "price": 499.99
     },
     {
       "name": "MacBook Pro 14",
       "description": "Professional-grade laptop with a 14-inch Retina display and impressive performance.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/tH2gQZr/Untitled-design-9.jpg",
       "category": "trending",
       "price": 1799.99
     },

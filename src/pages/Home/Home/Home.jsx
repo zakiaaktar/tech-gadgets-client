@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import useProducts from "../../../hooks/useProducts";
 import Banner from "../Banner/Banner";
+import Facility from "../Facility/Facility";
 
 import Faq from "../Faq/Faq";
 import Featured from "../Featured/Featured";
@@ -23,6 +24,7 @@ const Home = () => {
             </Helmet>
            
             <Banner></Banner>
+            <Facility></Facility>
             <Featured items={featured}></Featured>
             <Trending items={trending}></Trending>
             {/* <Summary></Summary> */}

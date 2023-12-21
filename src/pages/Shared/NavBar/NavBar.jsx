@@ -46,45 +46,6 @@ const Navbar = () => {
           PRODUCTS
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/secret"
-          className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
-        >
-          Secret
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink
-          to="/dashboard/cart"
-          className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
-        >
-          <button className="btn">
-          <FaShoppingCart className="mr-2"></FaShoppingCart>
-          <div className="badge badge-secondary">+{cart.length}</div>
-          </button>
-        </NavLink>
-      </li>
-
-
-      <div>
-        {!user && (
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive ? `text-black` : `text-white`
-              }
-            >
-              LOGIN
-            </NavLink>
-          </li>
-        )}
-      </div>
-
-
-
       <div>
         {user && isAdmin && (
           <li>
@@ -115,15 +76,47 @@ const Navbar = () => {
       </div>
 
 
+      <li>
+        <NavLink
+          to="/dashboard/cart"
+          className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
+        >
+          <button className="btn">
+          <FaShoppingCart className="mr-2"></FaShoppingCart>
+          <div className="badge bg-gradient-to-r from-[#6d0feb] to-[#cb45e1]">+{cart.length}</div>
+          </button>
+        </NavLink>
+      </li>
+
+
+      <div>
+        {!user && (
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? `text-black` : `text-white`
+              }
+            >
+              LOGIN
+            </NavLink>
+          </li>
+        )}
+      </div>
+
+
+
+      
+
 
     </>
   );
   
-
+  
   
   
   return (
-    <nav className="bg-[#F24C3D] z-10 w-full px-8 lg:px-24 py-4 rounded-bl-[45px] md:rounded-bl-[60px] rounded-br-[45px] md:rounded-br-[60px]">
+    <nav className="bg-gradient-to-r from-[#6d0feb] to-[#cb45e1]  w-full px-8 lg:px-24 py-4">
     <div className="flex justify-between items-center">
       {/* small screen dropdown  */}
       <div className="dropdown lg:hidden z-10">
@@ -267,13 +260,42 @@ const Navbar = () => {
                 </div>
               </>
             )}
-            <div className="flex justify-center mt-6 mb-8">
+            <div className="flex justify-center mt-6 mb-8 text-white font-semibold">
+        {user && isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/adminHome"
+              className={({ isActive }) =>
+                isActive ? `text-black` : `text-white`
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+      </div>
+      <div className="flex justify-center mt-6 mb-8 text-white font-semibold">
+        {user && !isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/userHome"
+              className={({ isActive }) =>
+                isActive ? `text-black` : `text-white`
+              }
+            >
+              GO TO DASHBOARD
+            </NavLink>
+          </li>
+        )}
+      </div>
+
+            {/* <div className="flex justify-center mt-6 mb-8">
               <li>
                 <NavLink to="/dashboard" className="text-white font-semibold">
                   GO TO DASHBOARD
                 </NavLink>
               </li>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
