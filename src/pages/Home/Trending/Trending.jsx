@@ -12,7 +12,7 @@ const Trending = ({items}) => {
     return (
         <section className="my-16">
         <SectionTitle
-    title={`Trending Products`}
+    title={`Our Trending Products`}
     ></SectionTitle>
     <div>
     <Swiper
@@ -38,14 +38,14 @@ const Trending = ({items}) => {
       <div>
         {items.map((item) => (
           <SwiperSlide key={item._id}>
-            <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl bg-gradient-to-r from-[#6d0feb] to-[#cb45e1]">
+            <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-[#6d0feb]">
               <img 
                 className="rounded-lg rounded-br-[100px]"
                 src={item.image}
                 alt=""
               />
               <div className="my-4 h-20">
-                <h2 className="font-bold text-lg text-white mb-2">
+                <h2 className="font-bold text-lg  mb-2">
                   {item.name}
                 </h2>
                 <p className="font-semibold text-sm  bg-blue-900 w-fit rounded px-2 mx-auto text-white">

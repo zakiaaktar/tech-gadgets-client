@@ -4,10 +4,10 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import img1 from "../../../assets/BannerImage/1.jpg"
 import img2 from "../../../assets/BannerImage/2.jpg";
-import img3 from "../../../assets/BannerImage/3.jpg";
+import img3 from "../../../assets/BannerImage/3.webp";
 import img4 from "../../../assets/BannerImage/4.jpg";
-import img5 from "../../../assets/BannerImage/10.png";
-import img6 from "../../../assets/BannerImage/9.png";
+import img5 from "../../../assets/BannerImage/5.jpg";
+import img6 from "../../../assets/BannerImage/6.webp";
 import { Autoplay, Pagination } from "swiper/modules";
 
 
@@ -31,42 +31,42 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img1}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img2}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img3}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img4}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img5}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="rounded-bl-[45px] lg:rounded-bl-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img6}
             alt=""
           />

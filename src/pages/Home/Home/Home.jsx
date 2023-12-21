@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import useProducts from "../../../hooks/useProducts";
 import Banner from "../Banner/Banner";
+import Contact from "../Contact/Contact";
 import Facility from "../Facility/Facility";
 
 import Faq from "../Faq/Faq";
@@ -29,6 +30,7 @@ const Home = () => {
             <Trending items={trending}></Trending>
             {/* <Summary></Summary> */}
             <Faq></Faq>
+            <Contact></Contact>
            
            
         </div>

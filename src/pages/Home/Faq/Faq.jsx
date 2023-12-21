@@ -8,7 +8,7 @@ const Faq = () => {
     return (
         <section className="w-4/5 mx-auto my-16">
             <SectionTitle
-                    title={`Frequently Asked Questions`}
+                    title={`FAQ Section`}
             ></SectionTitle>
           
            <div style={{
@@ -18,7 +18,7 @@ const Faq = () => {
 
 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
     
-    <div className="flex flex-col text-white font-bold divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-300">
+    <div className="flex flex-col font-bold divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-300">
         <details>
             <summary className="py-2 outline-none cursor-pointer">Q: How can I place an order on your website?</summary>
             <div className="px-4 pb-4 space-y-2">
