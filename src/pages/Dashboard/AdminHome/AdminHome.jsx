@@ -3,91 +3,73 @@ import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaBook, FaDollarSign, FaUsers } from "react-icons/fa";
 
-
-
-
-
 const AdminHome = () => {
-    const { user } = useAuth();
-    const axiosSecure = useAxiosSecure();
+  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
+  const { data: stats = {} } = useQuery({
+    queryKey: ["admin-stats"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/admin-stats");
+      return res.data;
+    },
+  });
 
-    const { data: stats = {} } = useQuery({
-        queryKey: ['admin-stats'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/admin-stats');
-            return res.data;
-        }
-    });
+  const { data: chartData = [] } = useQuery({
+    queryKey: ["order-stats"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/order-stats");
+      return res.data;
+    },
+  });
 
+  //bg-gradient-to-r from-[#6d0feb] to-[#7071E8] px-8 lg:px-24 py-12 rounded-tl-3xl rounded-br-3xl border-[#7071E8]
 
-    const { data: chartData = [] } = useQuery({
-        queryKey: ['order-stats'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/order-stats');
-            return res.data;
-        }
-    })
+  return (
+    <div className="w-4/5 mx-auto my-16">
+      <h2 className="text-3xl font-extrabold mb-8">
+        <span>Hi, Welcome </span>
+        {user?.displayName ? user.displayName : "Back"}
+        <span> !!!</span>
+      </h2>
 
-
-    
-    
-
-    return (
-        <div>
-            <h2 className="text-3xl">
-                <span>Hi, Welcome </span>
-                {
-                    user?.displayName ? user.displayName : 'Back'
-                }
-            </h2>
-
-            <div className="stats shadow">
-  
-  
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <FaDollarSign className='text-3xl'></FaDollarSign>
-                    </div>
-                    <div className="stat-title">Revenue</div>
-                    <div className="stat-value">${stats.revenue}</div>
-                    
-                </div>
-  
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <FaUsers className='text-3xl'></FaUsers>
-                    </div>
-                    <div className="stat-title">Users</div>
-                    <div className="stat-value">{stats.users}</div>
-                    
-                </div>
-  
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <FaBook className='text-3xl'></FaBook>
-                    </div>
-                    <div className="stat-title">Product Items</div>
-                    <div className="stat-value">{stats.productItems}</div>
-                    
-                </div>
-
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-                    </div>
-                    <div className="stat-title">Orders</div>
-                    <div className="stat-value">{stats.orders}</div>
-                    
-                </div>
-  
-            </div>
-
-
-            
-
+      <div className="stats stats-vertical lg:stats-horizontal shadow rounded-tl-3xl rounded-br-3xl border-4 border-[#7071E8]">
+        <div className="stat">
+          <div className="stat-figure">
+            <FaDollarSign className="text-2xl mt-5  text-[#cb45e1]"></FaDollarSign>
+          </div>
+          <div className="stat-title text-[#7071E8] font-bold">Revenue</div>
+          <div className="stat-value">${stats.revenue}</div>
         </div>
-    );
+
+        <div className="stat border-4 border-[#7071E8]">
+          <div className="stat-figure text-secondary">
+            <FaUsers className="text-2xl mt-5  text-[#cb45e1]"></FaUsers>
+          </div>
+          <div className="stat-title text-[#7071E8] font-bold">Users</div>
+          <div className="stat-value">{stats.users}</div>
+        </div>
+
+        <div className="stat border-2 border-[#7071E8]">
+          <div className="stat-figure text-secondary">
+            <FaBook className="text-2xl mt-5 text-[#cb45e1]"></FaBook>
+          </div>
+          <div className="stat-title text-[#7071E8] font-bold">
+            Product Items
+          </div>
+          <div className="stat-value">{stats.productItems}</div>
+        </div>
+
+        <div className="stat border-2 border-[#7071E8]">
+          <div className="stat-figure text-secondary">
+            <FaBook className="text-2xl mt-5  text-[#cb45e1]"></FaBook>
+          </div>
+          <div className="stat-title text-[#7071E8] font-bold">Orders</div>
+          <div className="stat-value">{stats.orders}</div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default AdminHome;

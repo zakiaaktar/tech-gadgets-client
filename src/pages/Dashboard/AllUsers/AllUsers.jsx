@@ -63,17 +63,17 @@ const AllUsers = () => {
 
 
     return (
-        <div>
+        <div className="w-4/5 mx-auto my-16 bg-blue-100 py-8 px-2">
             <div className="flex justify-evenly my-4">
-                <h2 className="text-3xl">All Users</h2>
-                <h2 className="text-3xl">Total Users: {users.length}</h2>
+                <h2 className="text-3xl text-[#7071E8] font-bold">All Users</h2>
+                <h2 className="text-3xl text-[#7071E8] font-bold">Total Users: {users.length}</h2>
             </div>
 
             {/* table */}
             <div className="overflow-x-auto w-full mx-2">
   <table className="table table-zebra">
     {/* head */}
-    <thead>
+    <thead className="text-[#7071E8] font-bold text-lg">
     <tr>
         <th></th>
         <th>Name</th>
@@ -85,13 +85,13 @@ const AllUsers = () => {
     <tbody>
             {
                 users.map((user, index) => <tr key={user._id}>
-                    <th>{index + 1}</th>
+                    <th className="text-[#7071E8] font-bold">{index + 1}</th>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
                     { user.role === 'admin' ? 'Admin' : <button
                         onClick={() => handleMakeAdmin(user)}
-                        className="btn btn-lg bg-orange-500">
+                        className="btn btn-md bg-[#7071E8] font-bold">
                         <FaUsers className="text-white 
                         text-2xl"></FaUsers>
                         </button>}

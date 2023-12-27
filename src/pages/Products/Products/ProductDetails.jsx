@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
 import ReviewForm from '../ReviewForm/ReviewForm';
@@ -6,6 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useCart from '../../../hooks/useCart';
+import ShowReview from '../ShowReview/ShowReview.JSX';
 
 
 
@@ -80,7 +80,7 @@ const ProductDetails = () => {
       )}
 
         <div className="rounded-t-lg h-fit">
-        <h2 className="font-semibold text-2xl md:text-3xl bg-[#13a0fe] text-center py-12 text-white rounded-lg rounded-br-[30px] md:rounded-br-[50px]">
+        <h2 className="font-extrabold md:text-3xl  text-center py-12 text-[#7071E8]">
           {name}
         </h2>
         </div>
@@ -92,13 +92,13 @@ const ProductDetails = () => {
 
             </figure>
             <div className="card-body w-1/2">
-                <h2 className="card-title text-2xl font-bold">{name}</h2>
-                <p className='mt-12'>{description}</p>
-                <p className='text-xl text-blue-500 font-bold text-semibold'>Price: ${price}</p>
+                {/* <h2 className="card-title text-2xl text-[#7071E8] font-bold">{name}</h2> */}
+                <p className='mt-12'>Featured: {description}</p>
+                <p className='text-xl text-[#6d0feb] font-bold text-semibold'>Price: ${price}</p>
                 <div>
                   <button 
                     onClick={handleAddToCart}
-                    className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-900 text-black cursor-pointer mb-11">
+                    className="btn btn-outline bg-slate-100 border-0 border-b-4 w-1/4 mx-auto border-blue-500 text-black cursor-pointer mb-11">
                       Add to cart
                   </button>
                     
@@ -106,7 +106,7 @@ const ProductDetails = () => {
             </div>
 
         </div>
-        
+      <ShowReview></ShowReview> 
       <ReviewForm></ReviewForm>
      
     </>
@@ -119,3 +119,5 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+

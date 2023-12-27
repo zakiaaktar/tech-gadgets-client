@@ -3,21 +3,21 @@
     "name": "MacBook Air M2",
     "description": "Ultra-slim and lightweight laptop with Apple's M2 chip for fast performance.",
     "image": "https://i.ibb.co/ZTL9FLn/Untitled-design-2.jpg",
-    "category": "featured",
+    "category": "Newest",
     "price": 1299.99
    },
    {
-    "name": "iPhone 15 Pro",
+    "name": "iPhone 15 Pro Max",
     "description": "The latest iPhone with advanced camera capabilities and enhanced performance.",
     "image": "https://i.ibb.co/s6VBwWz/Untitled-design-1.jpg",
-    "category": "featured",
+    "category": "Newest",
     "price": 1099.99
     },
     {
       "name": "Samsung Galaxy S21",
       "description": "Powerful Android smartphone with a stunning display and high-end features.",
       "image": "https://i.ibb.co/TbsF0xh/Untitled-design.jpg",
-      "category": "featured",
+      "category": "Newest",
       "price": 799.99
     },
     {
@@ -35,10 +35,10 @@
       "price": 1899.99
     },
     {
-      "name": "Apple Watch Series 7",
+      "name": "Apple Watch Series 8",
       "description": "The latest Apple Watch with a larger, always-on Retina display and new health features.",
-      "image": "https://i.ibb.co/HpbTDfG/Untitled-design-5.jpg",
-      "category": "trending",
+      "image": "https://i.ibb.co/VJJszHw/Untitled-design-31.jpg",
+      "category": "Best Selling",
       "price": 399.99
     },
     {
@@ -49,86 +49,86 @@
       "price": 699.99
     },
     {
-      "name": "iPhone 14 pro max",
+      "name": "iPhone 15 Pro",
       "description": "Compact iPhone with a powerful A15 Bionic chip, perfect for those who prefer a smaller size.",
       "image": "https://i.ibb.co/PTcbS4g/Untitled-design-7.jpg",
-       "category": "trending",
+       "category": "Best Selling",
       "price": 499.99
     },
     {
-      "name": "MacBook Pro 14",
+      "name": "MacBook Pro M2",
       "description": "Professional-grade laptop with a 14-inch Retina display and impressive performance.",
       "image": "https://i.ibb.co/tH2gQZr/Untitled-design-9.jpg",
-      "category": "trending",
+      "category": "Best Selling",
       "price": 1799.99
     },
     {
       "name": "LG UltraGear 34GN850-B",
       "description": "34-inch ultrawide gaming monitor with a high refresh rate for smooth gameplay.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/VWB0r1t/Untitled-design-17.jpg",
       "category": "Monitors",
       "price": 899.99
     },
     {
       "name": "CyberPowerPC Gamer Xtreme VR Gaming PC",
       "description": "High-performance gaming PC with VR-ready capabilities for immersive experiences.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/stkjtTc/Untitled-design-32.jpg",
       "category": "Gaming PCs",
       "price": 1299.99
     },
     {
       "name": "Apple Watch SE",
       "description": "Affordable Apple Watch with essential features and a stylish design.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/HpbTDfG/Untitled-design-5.jpg",
       "category": "Apple Watches",
       "price": 279.99
     },
     {
       "name": "OnePlus 9 Pro",
       "description": "Flagship Android smartphone with Hasselblad-tuned cameras for exceptional photos.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/x7Y4ztx/Untitled-design-19.jpg",
       "category": "Smartphones",
       "price": 899.99
     },
     {
-      "name": "iPhone 12 Mini",
+      "name": "iPhone 15 Mini",
       "description": "Compact iPhone with 5G capabilities and a dual-camera system.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/hy1G0mj/Untitled-design-21.jpg",
       "category": "iPhones",
-      "price": 699.99
+      "price": 999.99
     },
     {
       "name": "MacBook Air M1",
       "description": "Revolutionary laptop with Apple's M1 chip for a silent and energy-efficient experience.",
-      "image": "https://i.ibb.co/f46H5dP/Untitled-design.jpg",
+      "image": "https://i.ibb.co/xDK0z4t/Untitled-design-22.jpg",
       "category": "MacBooks",
-      "price": 999.99
+      "price": 111.99
     },
     {
       "name": "ASUS ROG Swift PG279Q",
       "description": "27-inch gaming monitor with a high refresh rate and G-Sync technology for smooth gaming.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/W0LB263/Untitled-design-25.jpg",
       "category": "Monitors",
-      "price": 599.99
+      "price": 130.99
     },
     {
       "name": "HP Omen Obelisk Gaming PC",
       "description": "Powerful gaming desktop with customizable RGB lighting and top-tier hardware.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/8xxYD6R/Untitled-design-26.jpg",
       "category": "Gaming PCs",
       "price": 1499.99
     },
     {
       "name": "Samsung Galaxy Watch 4",
       "description": "Smartwatch with advanced health tracking features and a sleek design.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/b3g1wbQ/Untitled-design-28.jpg",
       "category": "Apple Watches",
-      "price": 329.99
+      "price": 629.99
     },
     {
       "name": "Xiaomi Mi 11",
       "description": "Feature-packed Android smartphone with a high-resolution display and Snapdragon 888 processor.",
-      "image": "https://i.ibb.co/T8f7pLq/feture1.png",
+      "image": "https://i.ibb.co/hKCtn1S/Untitled-design-30.jpg",
       "category": "Smartphones",
       "price": 799.99
     }

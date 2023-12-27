@@ -1,7 +1,7 @@
 import { HiMenuAlt1 } from "react-icons/hi";
 import { NavLink, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-//import logo from "../../../assets/logo1.png";
+import logo from "../../../assets/logo.png";
 import useAuth from "../../../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
@@ -33,7 +33,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
+          className={({ isActive }) => (isActive ? `text-blue-200` : `text-white`)}
         >
           HOME
         </NavLink>
@@ -41,12 +41,20 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/products"
-          className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
+          className={({ isActive }) => (isActive ? `text-blue-200` : `text-white`)}
         >
           PRODUCTS
         </NavLink>
       </li>
-      <div>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? `text-blue-200` : `text-white`)}
+        >
+          CONTACT
+        </NavLink>
+      </li>
+      {/* <div>
         {user && isAdmin && (
           <li>
             <NavLink
@@ -59,8 +67,8 @@ const Navbar = () => {
             </NavLink>
           </li>
         )}
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         {user && !isAdmin && (
           <li>
             <NavLink
@@ -73,7 +81,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         )}
-      </div>
+      </div> */}
 
 
       <li>
@@ -81,10 +89,10 @@ const Navbar = () => {
           to="/dashboard/cart"
           className={({ isActive }) => (isActive ? `text-black` : `text-white`)}
         >
-          <button className="btn">
-          <FaShoppingCart className="mr-2"></FaShoppingCart>
-          <div className="badge bg-gradient-to-r from-[#6d0feb] to-[#cb45e1]">+{cart.length}</div>
-          </button>
+          <div className="flex items-center gap-2">
+          <FaShoppingCart className="text-2xl text-white"></FaShoppingCart>
+          <div className="badge bg-gradient-to-r from-[#6d0feb] to-[#cb45e1] text-white">+{cart.length}</div>
+          </div>
         </NavLink>
       </li>
 
@@ -104,19 +112,16 @@ const Navbar = () => {
         )}
       </div>
 
-
-
-      
-
-
     </>
   );
   
   
-  
+  //bg-gradient-to-r from-[#6d0feb] to-[#cb45e1] w-full px-8 lg:px-24 py-4
+  //bg-gradient-to-r from-[#6d0feb] to-[#7071E8] w-full px-8 lg:px-24 py-4
+  //bg-gradient-to-r from-[#5322a1] to-[#f77f8a] w-full px-8 lg:px-24 py-4
   
   return (
-    <nav className="bg-gradient-to-r from-[#6d0feb] to-[#cb45e1]  w-full px-8 lg:px-24 py-4">
+    <nav className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] w-full px-8 lg:px-24 py-4">
     <div className="flex justify-between items-center">
       {/* small screen dropdown  */}
       <div className="dropdown lg:hidden z-10">
@@ -163,13 +168,35 @@ const Navbar = () => {
                 </li>
               )}
             </div>
-            <div className="mb-8">
-              <li>
-                <NavLink to="/dashboard" className="text-white font-semibold">
-                  GO TO DASHBOARD
-                </NavLink>
-              </li>
-            </div>
+            <div className="flex justify-center  text-white font-semibold">
+        {user && isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/adminHome"
+              className={({ isActive }) =>
+                isActive ? `text-blue-300` : `text-white`
+              }
+            >
+              GO TO DASHBOARD
+            </NavLink>
+          </li>
+        )}
+      </div>
+      <div className="flex justify-center mt-6 mb-8 text-white font-semibold">
+        {user && !isAdmin && (
+          <li>
+            <NavLink
+              to="/dashboard/userHome"
+              className={({ isActive }) =>
+                isActive ? `text-blue-300` : `text-white`
+              }
+            >
+              GO TO DASHBOARD
+            </NavLink>
+          </li>
+        )}
+      </div>
+
           </div>
           <div className="mt-4">
             {user && (
@@ -205,10 +232,10 @@ const Navbar = () => {
         </ul>
       </div>
       <NavLink to="/">
-        {/* <div className="text-white">
+        <div className="text-white">
           <img className="w-40 lg:w-52" src={logo} alt="" />
-        </div> */}
-        <h1 className="text-3xl">tech gadgets</h1>
+        </div>
+        
       </NavLink>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-12 font-bold  items-center">
@@ -266,10 +293,10 @@ const Navbar = () => {
             <NavLink
               to="/dashboard/adminHome"
               className={({ isActive }) =>
-                isActive ? `text-black` : `text-white`
+                isActive ? `text-blue-300` : `text-white`
               }
             >
-              Dashboard
+              GO TO DASHBOARD
             </NavLink>
           </li>
         )}
@@ -280,7 +307,7 @@ const Navbar = () => {
             <NavLink
               to="/dashboard/userHome"
               className={({ isActive }) =>
-                isActive ? `text-black` : `text-white`
+                isActive ? `text-blue-300` : `text-white`
               }
             >
               GO TO DASHBOARD
@@ -289,7 +316,7 @@ const Navbar = () => {
         )}
       </div>
 
-            {/* <div className="flex justify-center mt-6 mb-8">
+            {/* <div className="flex justify-center ">
               <li>
                 <NavLink to="/dashboard" className="text-white font-semibold">
                   GO TO DASHBOARD

@@ -62,12 +62,12 @@ const SignUp = () => {
        <Helmet>
                 <title>Tech Gadgets | Sign Up</title>
         </Helmet>
-    <section className="container mx-auto lg:mt-12">
+    <section className="container mx-auto lg:mt-6">
       <div className="lg:flex items-center justify-center lg:gap-32">
-        <div className="w-11/12 lg:w-full bg-slate-100 rounded-lg drop-shadow-2xl mx-auto">
+        <div className="w-11/12 lg:w-full bg-blue-100 rounded-lg drop-shadow-2xl mx-auto rounded-tl-3xl rounded-br-3xl">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="card-body lg:px-32 pt-12 lg:pt-32 pb-12"
+            className="card-body lg:px-32 pt-6 lg:pt-32 pb-9"
           >
             <div className="form-control">
               <label className="label">
@@ -80,7 +80,7 @@ const SignUp = () => {
                 {...register("name", { required: true })}
                 name="name"
                 placeholder="Enter Your Name"
-                className="input rounded focus:border-[#F94C10]"
+                className="input rounded focus:border-[#7071E8]"
               />
             </div>
             {errors.name && (
@@ -96,7 +96,7 @@ const SignUp = () => {
                 type="text"
                 {...register("photoURL", { required: true })}
                 placeholder="Enter Your Photo URL"
-                className="input rounded focus:border-[#F94C10]"
+                className="input rounded focus:border-[#7071E8]"
               />
             </div>
             {errors.photoURL && (
@@ -114,7 +114,7 @@ const SignUp = () => {
                 {...register("email", { required: true })}
                 name="email"
                 placeholder="Enter Your Email"
-                className="input rounded focus:border-[#F94C10]"
+                className="input rounded focus:border-[#7071E8]"
               />
             </div>
             {errors.email && (
@@ -138,7 +138,7 @@ const SignUp = () => {
                   })}
                   name="password"
                   placeholder="Enter Your Password"
-                  className="input rounded focus:border-[#F94C10] w-full"
+                  className="input rounded focus:border-[#7071E8] w-full"
                 />
                 <span
                   className="absolute top-4 right-2"
@@ -166,18 +166,18 @@ const SignUp = () => {
             )}
             <div className="form-control mt-6">
               <input
-                className="btn btn-outline rounded font-bold text-xl text-white bg-gradient-to-r from-[#FF9B50] to-[#F94C10] border-0 hover:opacity-80"
+                className="btn btn-outline rounded font-bold text-xl text-white bg-gradient-to-r from-[#6d0feb] to-[#7071E8] border-0 hover:opacity-80"
                 type="submit"
                 value="Sign Up"
               />
             </div>
            
           </form>
-          <div className="my-8 text-center">
+          <div className="text-center">
               <p className="font-medium mb-4">
                 Already have an account
                 <Link to="/login">
-                  <span className="text-[#F94C10]"> Please Login</span>
+                  <span className="text-[#7071E8] font-bold text-xl"> Please Login</span>
                 </Link>
               </p>
               <SocialLogin></SocialLogin>
@@ -185,7 +185,7 @@ const SignUp = () => {
         </div>
 
         {/* right side background */}
-        <div className="bg-gradient-to-r from-[#FF9B50] to-[#F94C10] w-full py-20 lg:py-80 text-center text-white rounded-b-xl lg:rounded-3xl">
+        <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] w-full py-20 lg:py-80 text-center text-white rounded-tl-3xl rounded-br-3xl">
           <Link to="/">
             <h2 className="font-bold text-5xl mb-4">Tech Gadgets</h2>
           </Link>

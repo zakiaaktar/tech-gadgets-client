@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'https://tech-gadgets-server.vercel.app'
-})
+  baseURL: "http://localhost:1000",
+});
 
 const useAxiosPublic = () => {
-    return axiosPublic;
+  return axiosPublic;
 };
 
 export default useAxiosPublic;

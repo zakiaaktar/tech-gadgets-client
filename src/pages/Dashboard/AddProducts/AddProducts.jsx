@@ -58,7 +58,7 @@ const AddProducts = () => {
     
 
     return (
-        <div className='mt-11'>
+        <div className='w-4/5 mx-auto my-16 bg-blue-100 py-8 px-2'>
             <SectionTitle title="Add an Product" description="What's new?"></SectionTitle>
             
             <div>
@@ -116,7 +116,7 @@ const AddProducts = () => {
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div>
 
-                    <button className="btn">
+                    <button className="btn btn-outline rounded font-bold text-lg text-white bg-gradient-to-r from-[#6d0feb] to-[#7071E8] border-0 hover:opacity-80">
                         Add Product <MdOutlineProductionQuantityLimits className="ml-4 text-3xl"></MdOutlineProductionQuantityLimits>
 
                        
