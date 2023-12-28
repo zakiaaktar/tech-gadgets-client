@@ -15,15 +15,13 @@ const AdminHome = () => {
     },
   });
 
-  const { data: chartData = [] } = useQuery({
-    queryKey: ["order-stats"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/order-stats");
-      return res.data;
-    },
-  });
-
-  //bg-gradient-to-r from-[#6d0feb] to-[#7071E8] px-8 lg:px-24 py-12 rounded-tl-3xl rounded-br-3xl border-[#7071E8]
+  // const { data: chartData = [] } = useQuery({
+  //   queryKey: ["order-stats"],
+  //   queryFn: async () => {
+  //     const res = await axiosSecure.get("/order-stats");
+  //     return res.data;
+  //   },
+  // });
 
   return (
     <div className="w-4/5 mx-auto my-16">

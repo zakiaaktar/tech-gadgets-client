@@ -11,12 +11,12 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Home/Contact/Contact";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import ProductDetails from "../pages/Products/Products/ProductDetails";
 import Products from "../pages/Products/Products/Products";
-import Secret from "../pages/Shared/Secret/Secret";
 import SignUp from "../pages/SignUp/SignUp";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
@@ -25,6 +25,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -45,13 +46,14 @@ export const router = createBrowserRouter([
       {
         path: "products",
         element: <Products></Products>,
-        loader: () => fetch("http://localhost:1000/productsCount"),
+        loader: () =>
+          fetch("https://tech-gadgets-server.vercel.app/productsCount"),
       },
       {
         path: "products/:id",
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/products/${params.id}`),
+          fetch(`https://tech-gadgets-server.vercel.app/products/${params.id}`),
       },
     ],
   },
@@ -118,7 +120,7 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/products/${params.id}`),
+          fetch(`https://tech-gadgets-server.vercel.app/products/${params.id}`),
       },
       {
         path: "users",

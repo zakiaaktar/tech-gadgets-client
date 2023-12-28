@@ -9,21 +9,12 @@ import useReviews from "../../../hooks/useReviews";
 import useProducts from "../../../hooks/useProducts";
 import { useLoaderData } from "react-router-dom";
 
+const ShowReview = ({ reviews }) => {
+  console.log(reviews);
 
-
-const ShowReview = () => {
-    const data = useLoaderData();
-  //console.log(data);
-  const { _id, name, image, description, category, price } = data;
-    
-    const [reviews] = useReviews(data);
-
-   
-
-
-    return (
-        <div className="container mx-auto mt-16">
-      <div>
+  return (
+    <div className="container mx-auto mt-16">
+      {/* <div>
         {reviews.length == 0 ? (
           <h2 className="font-bold text-2xl lg:text-4xl text-black mb-6 text-center uppercase">
             
@@ -35,7 +26,7 @@ const ShowReview = () => {
             Reviews 
           </h2>
         )}
-      </div>
+      </div> */}
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {reviews?.map((review) => (
           <SwiperSlide key={review._id}>
@@ -65,7 +56,7 @@ const ShowReview = () => {
         ))}
       </Swiper>
     </div>
-    );
+  );
 };
 
 export default ShowReview;

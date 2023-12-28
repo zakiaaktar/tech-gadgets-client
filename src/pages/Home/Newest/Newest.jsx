@@ -8,10 +8,8 @@ import { Link } from "react-router-dom";
 import useProducts from "../../../hooks/useProducts";
 import Button from "../../../components/Button/Button";
 
-
-
 const Newest = ({ items, _id }) => {
-  const [products] = useProducts();
+  //const [products] = useProducts();
 
   return (
     <section className="my-16">

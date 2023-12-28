@@ -7,8 +7,6 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 
-
-
 const BestSelling = ({ items }) => {
   return (
     <section className="my-16">

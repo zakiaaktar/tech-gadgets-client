@@ -5,7 +5,7 @@ import useAxiosSecure from "./useAxiosSecure";
 
 const useReviews = (product) => {
     const axiosSecure = useAxiosSecure();
-    // console.log(product.name)
+    
 
     
 

@@ -1,12 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router-dom";
-import useCart from "../hooks/useCart";
 import Sidebar from "../pages/Dashboard/Shared/Sidebar/Sidebar";
 import Topbar from "../pages/Dashboard/Shared/Topbar/Topbar";
 
 const Dashboard = () => {
-  const [cart] = useCart();
-
   return (
     <section>
       <Helmet>

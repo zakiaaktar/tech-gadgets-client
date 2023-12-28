@@ -2,6 +2,8 @@ import contact from "../../../assets/contact.jpg";
 import Button from "../../../components/Button/Button";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
+
+
 const Contact = () => {
   return (
     <>
@@ -87,12 +89,6 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <Button buttonTitle={`Submit`}></Button>
-                {/* <button
-                                    type="submit"
-                                    className='inline-flex items-center justify-center h-12 font-bold tracking-wide text-white transition duration-200 rounded-full px-6 py-3 border-none shadow-md border-[#6d0feb] hover:bg-black focus:shadow-outline focus:outline-none'
-                                >
-                                    Submit
-                                </button> */}
               </form>
             </div>
           </div>

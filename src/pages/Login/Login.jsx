@@ -56,8 +56,7 @@ const Login = () => {
       setDisabled(true);
     }
   };
- 
-  
+
   return (
     <>
       <Helmet>
@@ -104,7 +103,7 @@ const Login = () => {
               </div>
 
               {/* chaptcha */}
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <LoadCanvasTemplate />
                 </label>
@@ -116,7 +115,7 @@ const Login = () => {
                   className="input input-bordered rounded focus:border-[#7071E8]"
                   required
                 />
-              </div>
+              </div> */}
 
               <div className="form-control mt-6">
                 <input
@@ -132,7 +131,10 @@ const Login = () => {
                 <small>
                   New in Tech Gadgets ? Please{" "}
                   <Link to="/signup">
-                    <span className="text-[#7071E8] font-bold text-xl"> Sign Up</span>
+                    <span className="text-[#7071E8] font-bold text-xl">
+                      {" "}
+                      Sign Up
+                    </span>
                   </Link>
                 </small>
               </p>
@@ -146,6 +148,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

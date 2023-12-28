@@ -5,28 +5,25 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-
-
 const Main = () => {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-      }, []);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
-    const location = useLocation();
-    //console.log(location);
+  const location = useLocation();
+  //console.log(location);
 
-    const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('signup');
-    
+  const noHeaderFooter =
+    location.pathname.includes("login") || location.pathname.includes("signup");
 
-
-    return (
-        <div>
-             { noHeaderFooter || <NavBar></NavBar>}
-            <Outlet></Outlet>
-            { noHeaderFooter || <Footer></Footer>}
-        </div>
-    );
+  return (
+    <div>
+      {noHeaderFooter || <NavBar></NavBar>}
+      <Outlet></Outlet>
+      {noHeaderFooter || <Footer></Footer>}
+    </div>
+  );
 };
 
 export default Main;

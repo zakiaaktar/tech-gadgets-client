@@ -38,10 +38,7 @@ const ManageItems = () => {
 
   return (
     <div className="w-4/5 mx-auto my-16 bg-blue-100 py-8 px-2">
-      <SectionTitle
-        title="Manage All Product Items"
-        
-      ></SectionTitle>
+      <SectionTitle title="Manage All Product Items"></SectionTitle>
 
       <div>
         <div className="overflow-x-auto">

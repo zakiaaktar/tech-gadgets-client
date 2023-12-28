@@ -13,9 +13,7 @@ const ReviewForm = () => {
   const data = useLoaderData();
   //console.log(data);
   const { name } = data;
-  // const [products] = useProducts([]);
-  // const { name } = product;
-  // console.log(name)
+  
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
