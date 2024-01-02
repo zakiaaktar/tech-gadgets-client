@@ -2,9 +2,42 @@ import contact from "../../../assets/contact.jpg";
 import Button from "../../../components/Button/Button";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
+
+
 
 
 const Contact = () => {
+
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_yjzd4wj', 'template_d4w0b11', form.current, 'keIqv-63Z6F0UI5rG')
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Thank You For Your Email!",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        form.current.reset();
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
+
+
+
   return (
     <>
       <section className="w-4/5 mx-auto my-16 poppins">
@@ -17,7 +50,7 @@ const Contact = () => {
         >
           <div className=" d-flex  sm:mt-[100px] my-[100px] mx-auto align-items-center lg:w-[850px] py-12">
             <div className="block  lg:w-[380px] p-6 rounded-none mx-auto shadow-lg bg-white">
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div className="form-group mb-6 pt-12">
                   <input
                     type="text"
@@ -88,7 +121,10 @@ const Contact = () => {
                     name="message"
                   ></textarea>
                 </div>
-                <Button buttonTitle={`Submit`}></Button>
+                <div className="text-center">
+                <input className="btn hover:opacity-80 hover:bg-[#7071E8] uppercase text-black btn-outline bg-slate-100 border-0 border-b-4  border-[#7071E8] cursor-pointer" type="submit" value="Submit" />
+                </div>
+                
               </form>
             </div>
           </div>
@@ -99,3 +135,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
