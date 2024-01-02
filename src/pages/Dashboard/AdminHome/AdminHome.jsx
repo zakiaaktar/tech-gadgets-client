@@ -24,7 +24,7 @@ const AdminHome = () => {
   // });
 
   return (
-    <div className="w-4/5 mx-auto my-16">
+    <div className="w-10/12 lg:w-1/2 mx-auto my-16   ml-44 py-12 mt-44 lg:mt-56 rounded-tl-3xl rounded-br-3xl border-[#7071E8]">
       <h2 className="text-3xl font-extrabold mb-8">
         <span>Hi, Welcome </span>
         {user?.displayName ? user.displayName : "Back"}

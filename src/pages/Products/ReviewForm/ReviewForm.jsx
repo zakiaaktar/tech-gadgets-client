@@ -28,7 +28,7 @@ const ReviewForm = () => {
     // console.log(reviewerName, reviewerImage, review, rating);
 
     const reviewItem = {
-      product_name: name,
+      name,
       reviewer_name: user?.displayName,
       reviewer_image: user?.photoURL,
       review,

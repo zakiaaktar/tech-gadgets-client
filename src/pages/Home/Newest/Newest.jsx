@@ -12,7 +12,7 @@ const Newest = ({ items, _id }) => {
   //const [products] = useProducts();
 
   return (
-    <section className="my-16">
+    <section className="my-16 poppins">
       <SectionTitle title={`Newest Products`}></SectionTitle>
       <div>
         <Swiper
@@ -27,7 +27,11 @@ const Newest = ({ items, _id }) => {
             clickable: true,
           }}
           breakpoints={{
-            1024: {
+            800: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1280: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
@@ -38,7 +42,7 @@ const Newest = ({ items, _id }) => {
           <div>
             {items.map((item) => (
               <SwiperSlide key={item._id}>
-                <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-[#7071E8]">
+                <div className="card shadow-xl w-96 mx-auto p-4 cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl border-[#7071E8]">
                   <img
                     className="rounded-lg rounded-br-[100px]"
                     src={item.image}
@@ -46,7 +50,7 @@ const Newest = ({ items, _id }) => {
                   />
                   <div className="my-4 h-20">
                     <h2 className="font-bold text-lg mb-2">{item.name}</h2>
-                    <p className="font-semibold text-sm  bg-blue-900 w-fit rounded px-2 mx-auto text-white">
+                    <p className="font-semibold text-sm bg-blue-900 w-fit rounded px-2 mx-auto text-white">
                       {item.category}
                     </p>
                   </div>

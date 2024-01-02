@@ -7,7 +7,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const Contact = () => {
   return (
     <>
-      <section className="w-4/5 mx-auto my-16">
+      <section className="w-4/5 mx-auto my-16 poppins">
         <SectionTitle title={`Contact With Us`}></SectionTitle>
 
         <div

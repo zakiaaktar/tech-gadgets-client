@@ -21,7 +21,7 @@ const Sidebar = () => {
   const { user } = useAuth();
 
   return (
-    <div className="md:w-52 lg:w-96 bg-[#7071E8] flex justify-center min-h-screen">
+    <div className="md:w-52 lg:w-96 bg-[#7071E8] flex justify-center h-[2000px]">
       <ul className="mt-6 lg:mt-12">
         <div className="text-yellow-400 mb-10 lg:mb-20">
           <NavLink to="/">

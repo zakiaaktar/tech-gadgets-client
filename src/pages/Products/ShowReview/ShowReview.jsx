@@ -9,6 +9,7 @@ import useReviews from "../../../hooks/useReviews";
 import useProducts from "../../../hooks/useProducts";
 import { useLoaderData } from "react-router-dom";
 
+
 const ShowReview = ({ reviews }) => {
   console.log(reviews);
 

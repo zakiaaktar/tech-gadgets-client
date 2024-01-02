@@ -18,7 +18,7 @@ const Main = () => {
     location.pathname.includes("login") || location.pathname.includes("signup");
 
   return (
-    <div>
+    <div className="max-w-screen-[1964px] mx-auto">
       {noHeaderFooter || <NavBar></NavBar>}
       <Outlet></Outlet>
       {noHeaderFooter || <Footer></Footer>}

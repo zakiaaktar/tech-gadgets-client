@@ -123,11 +123,11 @@ const AddProducts = () => {
             <input
               {...register("image", { required: true })}
               type="file"
-              className="file-input w-full max-w-xs"
+              className="file-input file-input-bordered file-input-[#7071E8] border-[#7071E8] border-2 w-full max-w-xs"
             />
           </div>
 
-          <button className="btn btn-outline rounded font-bold text-lg text-white bg-gradient-to-r from-[#6d0feb] to-[#7071E8] border-0 hover:opacity-80">
+          <button className="btn btn-outline rounded font-bold text-lg text-white bg-[#7071E8] border-0 hover:opacity-80">
             Add Product{" "}
             <MdOutlineProductionQuantityLimits className="ml-4 text-3xl"></MdOutlineProductionQuantityLimits>
           </button>

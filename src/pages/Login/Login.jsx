@@ -19,9 +19,9 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   console.log("state in the location login page", location.state);
 
-  useEffect(() => {
-    loadCaptchaEnginge(6);
-  }, []);
+  // useEffect(() => {
+  //   loadCaptchaEnginge(6);
+  // }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -47,15 +47,15 @@ const Login = () => {
     });
   };
 
-  const handleValidateCaptcha = (e) => {
-    const user_captcha_value = e.target.value;
-    //console.log(value);
-    if (validateCaptcha(user_captcha_value)) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
-  };
+  // const handleValidateCaptcha = (e) => {
+  //   const user_captcha_value = e.target.value;
+  //   //console.log(value);
+  //   if (validateCaptcha(user_captcha_value)) {
+  //     setDisabled(false);
+  //   } else {
+  //     setDisabled(true);
+  //   }
+  // };
 
   return (
     <>
@@ -119,7 +119,7 @@ const Login = () => {
 
               <div className="form-control mt-6">
                 <input
-                  disabled={disabled}
+                  //disabled={disabled}
                   className="btn btn-outline rounded font-bold text-xl text-white bg-gradient-to-r from-[#6d0feb] to-[#7071E8] border-0 hover:opacity-80"
                   type="submit"
                   value="Login"

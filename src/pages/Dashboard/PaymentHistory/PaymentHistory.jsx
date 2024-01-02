@@ -3,9 +3,12 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
+
 const PaymentHistory = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+
+  
 
   const { data: payments = [] } = useQuery({
     queryKey: ["payments", user.email],
@@ -37,7 +40,7 @@ const PaymentHistory = () => {
             {payments.map((payment, index) => (
               <tr key={payment._id}>
                 <th className="text-[#7071E8] text-lg">{index + 1}</th>
-                <td>${payment.price}</td>
+                <td>${payment.price.toFixed(2)}</td>
                 <td>{payment.transactionId}</td>
                 <td>{payment.status}</td>
               </tr>

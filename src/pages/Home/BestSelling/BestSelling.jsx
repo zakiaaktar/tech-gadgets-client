@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const BestSelling = ({ items }) => {
   return (
-    <section className="my-16">
+    <section className="my-16 poppins">
       <SectionTitle title={`Best Selling Products`}></SectionTitle>
       <div>
         <Swiper
@@ -24,7 +24,11 @@ const BestSelling = ({ items }) => {
             clickable: true,
           }}
           breakpoints={{
-            1024: {
+            800: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1280: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
@@ -35,7 +39,7 @@ const BestSelling = ({ items }) => {
           <div>
             {items.map((item) => (
               <SwiperSlide key={item._id}>
-                <div className="card shadow-xl w-96 mx-auto p-4 rounded-none border-2 rounded-tl-3xl rounded-br-3xl border-[#7071E8]">
+                <div className="card shadow-xl w-96 mx-auto p-4 cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl border-[#7071E8]">
                   <img
                     className="rounded-lg rounded-br-[100px]"
                     src={item.image}

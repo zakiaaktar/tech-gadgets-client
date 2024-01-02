@@ -3,7 +3,7 @@ import faq from "../../../assets/faq.jpg";
 
 const Faq = () => {
   return (
-    <section className="w-4/5 mx-auto my-16">
+    <section className="w-4/5 mx-auto my-16 poppins">
       <SectionTitle title={`FAQ Section`}></SectionTitle>
 
       <div
@@ -12,7 +12,7 @@ const Faq = () => {
         }}
       >
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-          <div className="flex flex-col font-bold divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-300">
+          <div className="flex flex-col font-bold divide-y sm:px-8 lg:px-12 xl:px-32 divide-[#6d0feb]">
             <details>
               <summary className="py-2 outline-none cursor-pointer">
                 Q: How can I place an order on your website?

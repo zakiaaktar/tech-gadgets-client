@@ -14,15 +14,14 @@ const Footer = () => {
         <div className=" grid py-5 md:grid-cols-3">
           <div className=" px-4 py-8 ">
             <img
-              data-aos="zoom-in"
-              data-aos-duration="1500"
+              // data-aos="zoom-in"
+              // data-aos-duration="1500"
               className="mb-6"
               src={logo}
               alt="logo"
             />
             <p className="">
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Possimus, voluptate.{" "}
+            Tech Gadgets that understands its product & audience and is ready to connect the two. " It’s smart, intuitive and captivating. It simplifies its product offer and effortlessly shows users its advantages.{" "}
             </p>
             <br />
             <div className="flex items-center gap-3">
@@ -87,8 +86,8 @@ const Footer = () => {
                     placeholder="Email"
                   />
                   <div className="mt-6 flex items-center gap-3">
-                    <a href="#" className="duration-200 hover:scale-105">
-                      <FaFacebook className="text-3xl" />
+                    <a href="#" className="">
+                      <FaFacebook className="text-3xl duration-200 hover:scale-105" />
                     </a>
                     <a href="#" className="duration-200 hover:scale-105">
                       <FaLinkedin className="text-3xl" />

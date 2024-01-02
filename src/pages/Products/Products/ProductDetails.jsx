@@ -11,11 +11,17 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCart from "../../../hooks/useCart";
 import ShowReview from "../ShowReview/ShowReview.JSX";
+import useReviews from "../../../hooks/useReviews";
+
+
+
 
 const ProductDetails = () => {
   const data = useLoaderData();
   //console.log(data);
   const { _id, name, image, description, category, price } = data;
+  const [reviews] = useReviews(data);
+  console.log(reviews);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -80,12 +86,56 @@ const ProductDetails = () => {
         </h2>
       </div>
 
-      <div className="card card-side bg-base-100 shadow-xl rounded-none mb-16">
+      <div className="w-11/12 lg:w-1/2 bg-base-100 shadow-xl rounded-none mb-16 mx-auto">
+        <div>
+          <img className="w-full text-center" src={image} alt="product-img" />
+        </div>
+        <div className="card-body text-center">
+          <h2 className="lg:text-2xl text-[#7071E8] font-bold">{name}</h2>
+          <p className="">Featured: {description}</p>
+          <p className="text-xl text-[#6d0feb] font-bold text-semibold">
+            Price: ${price}
+          </p>
+          <div className="mt-4">
+            <button
+              onClick={handleAddToCart}
+              className="btn btn-outline bg-slate-100 border-0 border-b-4  mx-auto border-blue-500 text-black cursor-pointer mb-11"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <ShowReview reviews={reviews}></ShowReview> 
+      <ReviewForm></ReviewForm>
+    </>
+  );
+};
+
+export default ProductDetails;
+
+
+
+
+{/* <>
+      {name && (
+        <Helmet>
+          <title>{`Tech Gadgets | ${name}`}</title>
+        </Helmet>
+      )}
+
+      <div className="rounded-t-lg h-fit">
+        <h2 className="font-extrabold md:text-3xl  text-center py-12 text-[#7071E8]">
+          {name}
+        </h2>
+      </div>
+
+      <div className="card card-side bg-base-100 shadow-xl rounded-none mb-16 container mx-auto">
         <figure className="w-1/2">
           <img src={image} alt="product-img" />
         </figure>
         <div className="card-body w-1/2">
-          {/* <h2 className="card-title text-2xl text-[#7071E8] font-bold">{name}</h2> */}
+          <h2 className="card-title text-2xl text-[#7071E8] font-bold">{name}</h2>
           <p className="mt-12">Featured: {description}</p>
           <p className="text-xl text-[#6d0feb] font-bold text-semibold">
             Price: ${price}
@@ -100,10 +150,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      {/* <ShowReview></ShowReview> 
-      <ReviewForm></ReviewForm> */}
-    </>
-  );
-};
-
-export default ProductDetails;
+      <ShowReview reviews={reviews}></ShowReview> 
+      <ReviewForm></ReviewForm>
+    </> */}
