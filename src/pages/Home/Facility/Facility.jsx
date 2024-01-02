@@ -7,7 +7,7 @@ const Facility = () => {
 
       <div className="container flex flex-col items-center justify-center mx-auto sm:p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 group">
-          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8]  cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
+          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] hover:from-[#7071E8] hover:to-[#6d0feb]  group-hover:scale-90 hover:!scale-110 duration-700 cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
             <div className="bg-white shadow-md p-6 text-center h-full border-2 rounded-tl-3xl rounded-br-3xl">
               <h3 className=" text-sm lg:text-lg font-semibold mb-2 text-[#7071E8] ">
                 ONLINE SUPPORT
@@ -19,7 +19,7 @@ const Facility = () => {
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
+          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] hover:from-[#7071E8] hover:to-[#6d0feb]  group-hover:scale-90 hover:!scale-110 duration-700 cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
             <div className="bg-white shadow-md p-6 text-center h-full border-2 rounded-tl-3xl rounded-br-3xl">
               <h3 className="text-sm lg:text-lg font-semibold mb-2 text-[#7071E8]">
                 INSTALLATION
@@ -31,7 +31,7 @@ const Facility = () => {
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8]  cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
+          <div className="bg-gradient-to-r from-[#6d0feb] to-[#7071E8] hover:from-[#7071E8] hover:to-[#6d0feb]  group-hover:scale-90 hover:!scale-110 duration-700 cursor-pointer border-2 rounded-tl-3xl rounded-br-3xl p-[3px]">
             <div className="bg-white shadow-md p-6 text-center h-full border-2 rounded-tl-3xl rounded-br-3xl ">
               <h3 className="text-sm lg:text-lg font-semibold mb-2 text-[#7071E8]">
                 CUSTOMIZATION
@@ -52,4 +52,4 @@ const Facility = () => {
 export default Facility;
 
 
-//hover:from-[#7071E8] hover:to-[#6d0feb]  group-hover:scale-90 hover:!scale-110 duration-700
+

@@ -14,8 +14,8 @@ const Footer = () => {
         <div className=" grid py-5 md:grid-cols-3">
           <div className=" px-4 py-8 ">
             <img
-              // data-aos="zoom-in"
-              // data-aos-duration="1500"
+              data-aos="zoom-in"
+              data-aos-duration="1500"
               className="mb-6"
               src={logo}
               alt="logo"

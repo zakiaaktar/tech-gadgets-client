@@ -18,10 +18,10 @@ const Banner = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
@@ -45,7 +45,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className=" lg:h-[700px] w-full"
+            className="rounded-bl-[45px] lg:rounded-bl-[120px] rounded-br-[45px] lg:rounded-br-[120px] h-[220px] md:h-[320px] lg:h-[700px] w-full"
             src={img3}
             alt=""
           />
