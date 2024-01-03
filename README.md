@@ -1,8 +1,23 @@
-# React + Vite
+# Live link: https://tech-gadgets-1aa7b.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Website name: Tech Gadgets
 
-Currently, two official plugins are available:
+### Feature and functionality: 
+       -	Users can view products and product details.
+       -	Authentication with Google, Email, and Password.
+       -	Different Dashboard for Admin and User.
+       -	Admin can view all user data, delete user, add new products, manage, update, and delete products.        
+       -	Stripe Payment System and send email via mail gun after payment confirmation.
+       -	Upload an image to an image hosting server Imgbb.
+       -    Send email via Mailgun after payment confirmation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technology: 
+       - TanStack Query                 - Payment Gateway (Stripe)
+       - React Hook Form                - Captcha
+       - Express JS                     - Mailgun
+       - Node JS                        - Email JS
+       - MongoDB                        - AOS
+       - Firebase                       - React Router
+       - JWT                            - Tailwind CSS
+       - Swiper                         - Daisy UI
+       - Parallax  
