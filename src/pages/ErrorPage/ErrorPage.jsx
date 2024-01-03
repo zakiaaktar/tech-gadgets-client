@@ -12,7 +12,7 @@ const ErrorPage = () => {
           <h2 className="text-3xl my-4">Page Not Found </h2>
 
           <Link to="/">
-            <button className="btn mt-6 lg:text-lg text-white bg-[#407bff]">
+            <button className="btn mt-6 lg:text-lg text-white bg-gradient-to-r from-[#6d0feb] to-[#7071E8]">
               <FaArrowLeft></FaArrowLeft>
               Back To Home
             </button>
