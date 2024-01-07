@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="border-t-2 border-gray-300/50 py-6 text-center">
-            @copyright 2024 Zakia Aktar || Tech Gadgets
+            @copyright 2024 zakiaaktar.nila@gmail.com || All Rights Reserved.
           </div>
         </div>
       </section>
